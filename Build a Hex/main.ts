@@ -22,7 +22,7 @@ class Casilla {
       this.vecinos.push(casilla);
     }
   
-    //detecta hexagono en tablero
+    //detecta hexagono en tablero y lo elimina
     detectHex(): boolean { 
       let cont = 0;
       for (var vecino of this.vecinos){
@@ -31,8 +31,10 @@ class Casilla {
         }
       }
       if (cont == 6){ 
+        for (let i = 0; i < 6; i++){
+          this.vecinos.pop();
+        }
         puntaje += 100;
-        this.vecinos.pop();
         return true;
       }
       else{return false;}
@@ -56,8 +58,6 @@ class Casilla {
     }
   }
 
-
-  console.log(puntaje);
   let ficha0 = new Ficha("rojo");
   let ficha1 = new Ficha("rojo");
   let ficha2 = new Ficha("rojo");
@@ -79,6 +79,5 @@ class Casilla {
   casilla0.add(casilla4);
   casilla0.add(casilla5);
   casilla0.add(casilla6);
-  console.log(casilla0.detectHex()); 
-  console.log(puntaje);
-  console.log(casilla0.detectHex()); 
+  console.log(casilla0.detectHex());
+  console.log(casilla0.vecinos.length);
