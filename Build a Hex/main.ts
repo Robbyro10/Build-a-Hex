@@ -1,8 +1,10 @@
 //PROYECTO BUILD A HEX GAME
 //JUAN HEDDERICH
 
-//limite de 54 casillas
 let puntaje: number = 0;
+
+//The number of sides of the shape that must be formed
+let shape: number = 6;
 
 class Casilla {
     vecinos: Array<Casilla> = new Array<Casilla>();
@@ -30,10 +32,11 @@ class Casilla {
           cont++;
         }
       }
-      if (cont == 6){ 
-        for (let i = 0; i < 6; i++){
+      if (cont == shape){ 
+        for (let i = 0; i < shape; i++){
           this.vecinos.pop();
         }
+        
         puntaje += 100;
         return true;
       }
@@ -51,7 +54,7 @@ class Casilla {
   }
 
   //Funcion que recibe cantidad de triangulos en ficha y la crea
-  function createFicha(orden:number):void{
+  function createFicha(orden:number, color:string):void{
     for (let i = 1; i < orden; i++){
       //En proceso
 
