@@ -1,57 +1,11 @@
 //PROYECTO BUILD A HEX GAME
 //JUAN HEDDERICH
 
-let puntaje: number = 0;
+import {Casilla} from './classes/Casilla.js';
+import {Ficha} from './classes/Ficha.js';
 
 //The number of sides of the shape that must be formed
 let shape: number = 6;
-
-class Casilla {
-    vecinos: Array<Casilla> = new Array<Casilla>();
-    ficha: Ficha;
-  
-    constructor (ficha: Ficha){
-      this.ficha = ficha;
-    }
-  
-    //check get methods
-    get getFicha(): Ficha { 
-      return this.ficha; 
-    };
-  
-    add(casilla: Casilla): void {
-      //agrega casilla a la coleccion de vecinos y la marca como ocupada
-      this.vecinos.push(casilla);
-    }
-  
-    //detecta hexagono en tablero y lo elimina
-    detectHex(): boolean { 
-      let cont = 0;
-      for (var vecino of this.vecinos){
-        if (vecino.ficha.color == this.ficha.color){
-          cont++;
-        }
-      }
-      if (cont == shape){ 
-        for (let i = 0; i < shape; i++){
-          this.vecinos.pop();
-        }
-        
-        puntaje += 100;
-        return true;
-      }
-      else{return false;}
-    }
-    
-  }
-  
-  class Ficha{
-    color: String;
-  
-    constructor(color: String){
-      this.color = color;
-    } 
-  }
 
   //Funcion que recibe cantidad de triangulos en ficha y la crea
   function createFicha(orden:number, color:string):void{
