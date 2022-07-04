@@ -4,9 +4,6 @@
 import {Casilla} from './classes/Casilla.js';
 import {Ficha} from './classes/Ficha.js';
 
-//The number of sides of the shape that must be formed
-let shape: number = 6;
-
   //Funcion que recibe cantidad de triangulos en ficha y la crea
   function createFicha(orden:number, color:string):void{
     for (let i = 1; i < orden; i++){
