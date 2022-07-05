@@ -1,8 +1,9 @@
 //PROYECTO BUILD A HEX GAME
 //JUAN HEDDERICH
 
-import {Casilla} from './classes/Casilla.js';
-import {Ficha} from './classes/Ficha.js';
+import {Casilla} from './classes/Casilla';
+import {Ficha} from './classes/Ficha';
+import { Puntaje } from './classes/Puntaje';
 
 //Funcion que recibe cantidad de triangulos en ficha y la crea
 function createFicha(orden:number, color:string):void{

@@ -1,7 +1,6 @@
 
 import { Ficha } from "./Ficha";
-
-let puntaje: number = 0;
+import { Puntaje } from "./Puntaje";
 
 export class Casilla {
     vecinos: Array<Casilla> = new Array<Casilla>();
@@ -33,8 +32,6 @@ export class Casilla {
         for (let i = 0; i < 6; i++){
           this.vecinos.pop();
         }
-        
-        puntaje += 100;
         return true;
       }
       else{return false;}
