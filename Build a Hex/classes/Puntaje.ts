@@ -6,8 +6,7 @@ export class Puntaje {
         this.puntaje = puntaje;
     } 
 
-    addPoints(): number {
+    addPoints(): void {
         this.puntaje += 100;
-        return this.puntaje;
     }
 }

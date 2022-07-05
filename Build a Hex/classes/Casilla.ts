@@ -4,16 +4,11 @@ import { Puntaje } from "./Puntaje";
 
 export class Casilla {
     vecinos: Array<Casilla> = new Array<Casilla>();
-    ficha: Ficha;
+    ficha?: Ficha;
   
-    constructor (ficha: Ficha){
+    constructor (ficha?: Ficha){
       this.ficha = ficha;
     }
-  
-    //check get methods
-    get getFicha(): Ficha { 
-      return this.ficha; 
-    };
   
     add(casilla: Casilla): void {
       //agrega casilla a la coleccion de vecinos y la marca como ocupada
@@ -23,18 +18,17 @@ export class Casilla {
     //detecta hexagono en tablero y lo elimina
     detectHex(): boolean { 
       let cont = 0;
-      for (var vecino of this.vecinos){
-        if (vecino.ficha.color == this.ficha.color){
-          cont++;
+        for (var vecino of this.vecinos){
+          if (vecino.ficha?.color == this.ficha?.color){
+            cont++;
+          }
         }
-      }
-      if (cont == 6){ 
-        for (let i = 0; i < 6; i++){
-          this.vecinos.pop();
+        if (cont == 6){ 
+          for (let i = 0; i < 6; i++){
+            this.vecinos.pop();
+          }
+          return true;
         }
-        return true;
-      }
-      else{return false;}
-    }
-    
+        else{return false;}  
+      } 
   }

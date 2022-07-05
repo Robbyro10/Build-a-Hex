@@ -9,9 +9,14 @@ import { Puntaje } from './classes/Puntaje';
 function createFicha(orden:number, color:string):void{
   for (let i = 1; i < orden; i++){
     //En proceso
-
+    let i = new Ficha(color);
   }
 }
+
+
+//Implementation
+
+createFicha(6, "rojo");
 
 let ficha0 = new Ficha("rojo");
 let ficha1 = new Ficha("rojo");
