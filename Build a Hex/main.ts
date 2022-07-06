@@ -13,10 +13,21 @@ function createFicha(orden:number, color:string):void{
   }
 }
 
+function crearCasillas (n: number): Casilla[]{
+  var casillas: Casilla[] = [];
+  for (let i = 0; i < n; i++){
+    casillas.push(new Casilla(i));
+  }
+  return casillas;
+}
+
+function insertar (ficha: Ficha, casilla:Casilla): void{
+
+}
+
 
 //Implementation
-
-createFicha(6, "rojo");
+let tablero = crearCasillas(54);
 
 let ficha0 = new Ficha("rojo");
 let ficha1 = new Ficha("rojo");
@@ -25,13 +36,13 @@ let ficha3 = new Ficha("rojo");
 let ficha4 = new Ficha("rojo");
 let ficha5 = new Ficha("rojo");
 let ficha6 = new Ficha("rojo");
-let casilla0 = new Casilla(ficha0);
-let casilla1 = new Casilla(ficha1);
-let casilla2 = new Casilla(ficha2);
-let casilla3 = new Casilla(ficha3);
-let casilla4 = new Casilla(ficha4);
-let casilla5 = new Casilla(ficha5);
-let casilla6 = new Casilla(ficha6);
+let casilla0 = new Casilla(0, ficha0);
+let casilla1 = new Casilla(1, ficha1);
+let casilla2 = new Casilla(2, ficha2);
+let casilla3 = new Casilla(3, ficha3);
+let casilla4 = new Casilla(4, ficha4);
+let casilla5 = new Casilla(5, ficha5);
+let casilla6 = new Casilla(6, ficha6);
   
 casilla0.add(casilla1);
 casilla0.add(casilla2);

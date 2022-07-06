@@ -4,10 +4,12 @@ import { Puntaje } from "./Puntaje";
 
 export class Casilla {
     vecinos: Array<Casilla> = new Array<Casilla>();
+    id: number;
     ficha?: Ficha;
   
-    constructor (ficha?: Ficha){
+    constructor (id:number, ficha?: Ficha){
       this.ficha = ficha;
+      this.id = id;
     }
   
     add(casilla: Casilla): void {
