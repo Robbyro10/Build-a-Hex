@@ -22,15 +22,20 @@ function crearCasillas (n: number): Casilla[]{
 }
 
 function insertar (ficha: Ficha, casilla:Casilla): void{
-
+  casilla.ficha = ficha;
 }
 
+function setAdyacentes(tablero: Casilla[]): void{
+  //en proceso
+}
 
 //Implementation
 let tablero = crearCasillas(54);
 
 let ficha0 = new Ficha("rojo");
+insertar(ficha0, tablero[0]);
 let ficha1 = new Ficha("rojo");
+insertar(ficha1, tablero[1]);
 let ficha2 = new Ficha("rojo");
 let ficha3 = new Ficha("rojo");
 let ficha4 = new Ficha("rojo");
