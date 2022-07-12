@@ -25,42 +25,95 @@ function crearCasillas (n: number): Casilla[]{
   return casillas;
 }
 
-function setAdyacentes(tablero: Casilla[]): void{
-  let row0: number = 7;
-  let row1: number = 9;
-  let row2: number = 11;
-  let row: number = row0;
-  let isFirst: boolean = true;
-  for (let i = 0; i < 53; i++){
+function setAdyacentes1 (tablero: Casilla[]): void{
+  var row: number[] = [7,16,27,38,47,54];
+  let i:number = 0;
 
-    if ((row-1)%2 == 0){
-      if(i%2 == 0){
-        tablero[i].add(tablero[i+row+1]);
-        tablero[i+row+1].add(tablero[i]);
-      }
-    }
-    else{
-      if(i%2 != 0){
-        tablero[i].add(tablero[i+row+1]);
-        tablero[i+row+1].add(tablero[i]);
-      }
-    }
+  //first row
+  for (i = 0; i < 7; i++){
 
-    if ((isFirst == false) && (i < row-1)){ //it is not first or last
-      tablero[i].add(tablero[i-1]);
+    if (i < 7-1){
       tablero[i].add(tablero[i+1]);
     }
-    else if (isFirst){ //it is first
-      tablero[i].add(tablero[i+1]);
-      isFirst = false;
-    }
-    else if (i == row-1){ //it is last
+
+    if (tablero[i-1]){
       tablero[i].add(tablero[i-1]);
-      isFirst = true;
-      if (i == 6){row += row1} //last of first row
-      else if((i == 15) || (i == 26)){row += row2;}//last of second and third row
-      else if (i == 37){row += row1} //last of fourth row
-      else if (i == 46){row += row0;} //last of fifth row
+    }
+
+    if (i % 2 == 0){
+      tablero[i].add(tablero[i+8]);
+      tablero[i+8].add(tablero[i]);
+    }
+  }
+  //second row
+  for (i = 7; i < 16; i++){
+    if (i < 16-1){
+      tablero[i].add(tablero[i+1]);
+    }
+
+    if (tablero[i-7-1]){
+      tablero[i].add(tablero[i-1]);
+    }
+
+    if (i % 2 != 0){
+      tablero[i].add(tablero[i+10]);
+      tablero[i+10].add(tablero[i]);
+    }
+  }
+  //third row
+  for (i = 16; i < 27; i++){
+    if (i < 27 - 1){
+      tablero[i].add(tablero[i+1]);
+    }
+
+    if (tablero[i-16-1]){
+      tablero[i].add(tablero[i-1]);
+    }
+
+    if (i % 2 == 0){
+      tablero[i].add(tablero[i+11]);
+      tablero[i+11].add(tablero[i]);
+    }
+  }
+  //fourth row
+  for (i = 27; i < 38; i++){
+
+    if (i < 38-1){
+      tablero[i].add(tablero[i+1]);
+    }
+
+    if (tablero[i-27-1]){
+      tablero[i].add(tablero[i-1]);
+    }
+
+    if (i % 2 == 0){
+      tablero[i].add(tablero[i+10]);
+      tablero[i+10].add(tablero[i]);
+    }
+  }
+  //fifth row
+  for (i = 38; i < 47; i++){
+    if (i < 47 - 1){
+      tablero[i].add(tablero[i+1]);
+    }
+
+    if (tablero[i-38-1]){
+      tablero[i].add(tablero[i-1]);
+    }
+
+    if (i % 2 != 0){
+      tablero[i].add(tablero[i+8]);
+      tablero[i+8].add(tablero[i]);
+    }
+  }
+  //sixth row
+  for (i = 47; i < 54; i++){
+    if (i < 54 - 1){
+      tablero[i].add(tablero[i+1]);
+    }
+
+    if (tablero[i-47-1]){
+      tablero[i].add(tablero[i-1]);
     }
   }
 }
@@ -84,7 +137,7 @@ function detectHex(tablero: Casilla[], color: string): number {
 
 //Implementation
 let tablero = crearCasillas(54);
-setAdyacentes(tablero);
+setAdyacentes1(tablero);
 
 let ficha0 = new Ficha("rojo");
 let ficha1 = new Ficha("rojo");
@@ -99,7 +152,6 @@ insertar(ficha2, tablero[2]);
 insertar(ficha3, tablero[8]);
 insertar(ficha4, tablero[9]);
 insertar(ficha5, tablero[10]);
-
+insertar(ficha5, tablero[53]);
 
 console.log(tablero);
-console.log(detectHex(tablero, "rojo"));
