@@ -1,6 +1,5 @@
 
 import { Ficha } from "./Ficha";
-import { Puntaje } from "./Puntaje";
 
 export class Casilla {
     vecinos: Array<Casilla> = new Array<Casilla>();
