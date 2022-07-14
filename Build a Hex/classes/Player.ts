@@ -17,5 +17,9 @@ export class Player {
           else return false;
         }
         return ans;
-      }
+    }
+
+    martillo (casilla: Casilla): void{
+        delete(casilla.ficha);
+    }
 }

@@ -1,7 +1,6 @@
 //PROYECTO BUILD A HEX GAME
 //JUAN HEDDERICH
 
-import {Casilla} from './classes/Casilla';
 import {Ficha} from './classes/Ficha';
 import {Player} from './classes/Player';
 import {Generator} from './classes/Generator';
