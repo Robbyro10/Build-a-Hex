@@ -1,4 +1,5 @@
 import {Casilla} from './Casilla';
+import { Ficha } from './Ficha';
 
  export class Generator {
     //creates an array of Casillas with its respective id
@@ -8,8 +9,8 @@ import {Casilla} from './Casilla';
           casillas.push(new Casilla(i));
         }
         return casillas;
-      }
-      
+    }
+
     setAdyacentes (tablero: Casilla[]): void{
         var row: number[] = [7,16,27,38,47,54];
         let i:number = 0;

@@ -5,15 +5,17 @@ import {Casilla} from './classes/Casilla';
 import {Ficha} from './classes/Ficha';
 import {Player} from './classes/Player';
 import {Generator} from './classes/Generator';
+import { Puntaje } from './classes/Puntaje';
 
 //Implementation
-//let tablero = crearCasillas(54);
-//setAdyacentes1(tablero);
 
 let player = new Player;
 let generator = new Generator;
+let puntaje = new Puntaje(0);
 
 let tablero = generator.crearCasillas(54);
+let hex = [0,1,2,8,9,10];
+
 generator.setAdyacentes(tablero);
 
 let ficha0 = new Ficha("rojo");
@@ -31,6 +33,10 @@ player.insertar(ficha4, tablero[9]);
 player.insertar(ficha5, tablero[10]);
 player.insertar(ficha5, tablero[53]);
 
-console.log(tablero);
+console.log(player.detectShape(hex, tablero));
+if (player.detectShape(hex, tablero) == true){
+  puntaje.addPoints(200);
+}
+console.log(puntaje.puntaje);
 
 

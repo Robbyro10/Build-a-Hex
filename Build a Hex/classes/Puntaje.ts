@@ -4,9 +4,9 @@ export class Puntaje {
 
     constructor(puntaje: number){
         this.puntaje = puntaje;
-    } 
+    }
 
-    addPoints(): void {
-        this.puntaje += 100;
+    addPoints(points:number): void {
+        this.puntaje += points;
     }
 }
