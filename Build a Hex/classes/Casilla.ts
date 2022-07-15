@@ -12,7 +12,6 @@ export class Casilla {
     }
   
     add(casilla: Casilla): void {
-      //agrega casilla a la coleccion de vecinos y la marca como ocupada
       this.vecinos.push(casilla);
     }
   }

@@ -10,12 +10,15 @@ import { Puntaje } from './classes/Puntaje';
 
 let player = new Player;
 let generator = new Generator;
-let puntaje = new Puntaje(0);
+let points = new Puntaje(0);
+
+let pieza0 = generator.crearFichas(5, "verde");
+generator.setFichas(pieza0);
 
 let tablero = generator.crearCasillas(54);
 let hex = [0,1,2,8,9,10];
 
-generator.setAdyacentes(tablero);
+generator.setTablero(tablero);
 
 let ficha0 = new Ficha("rojo");
 let ficha1 = new Ficha("rojo");
@@ -32,10 +35,12 @@ player.insertar(ficha4, tablero[9]);
 player.insertar(ficha5, tablero[10]);
 player.insertar(ficha5, tablero[53]);
 
+console.log(pieza0);
 console.log(player.detectShape(hex, tablero));
 if (player.detectShape(hex, tablero) == true){
-  puntaje.addPoints(200);
+  points.addPoints(200);
 }
-console.log(puntaje.puntaje);
+console.log(points.puntaje);
+console.log(player.isGameOver(tablero));
 
 

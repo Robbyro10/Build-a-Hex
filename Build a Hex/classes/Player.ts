@@ -19,7 +19,17 @@ export class Player {
         return ans;
     }
 
-    martillo (casilla: Casilla): void{
+    removeFicha (casilla: Casilla): void{
         delete(casilla.ficha);
+    }
+
+    isGameOver (tablero: Casilla[]): boolean{
+      let resp: boolean = false;
+      for (var casilla of tablero){
+        if (!casilla.ficha){
+          return false;
+        }
+      }
+      return true;
     }
 }

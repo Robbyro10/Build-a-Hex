@@ -11,8 +11,26 @@ import { Ficha } from './Ficha';
         return casillas;
     }
 
-    setAdyacentes (tablero: Casilla[]): void{
+    crearFichas (n: number, color: string): Ficha[]{
+      var fichas: Ficha[] = [];
+      for (let i = 0; i < n; i++){
+        fichas.push(new Ficha(color));
+      }
+      return fichas;
+    }
+
+    setFichas (fichas: Ficha[]): void{
+      if (fichas.length > 1){
+        for (let i = 0; i < fichas.length-1;i++){
+          fichas[i].add(fichas[i+1]);
+          fichas[i+1].add(fichas[i]);
+        }
+      }
+    }
+
+    setTablero(tablero: Casilla[]): void{
         var row: number[] = [7,16,27,38,47,54];
+        //var row: number[] = [7,9,11,11,9,7];
         let i:number = 0;
       
         //first row
