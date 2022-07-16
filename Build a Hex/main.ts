@@ -12,9 +12,6 @@ let player = new Player;
 let generator = new Generator;
 let points = new Puntaje(0);
 
-let pieza0 = generator.crearFichas(5, "verde");
-generator.setFichas(pieza0);
-
 let tablero = generator.crearCasillas(54);
 let hex = [0,1,2,8,9,10];
 
@@ -35,12 +32,25 @@ player.insertar(ficha4, tablero[9]);
 player.insertar(ficha5, tablero[10]);
 player.insertar(ficha5, tablero[53]);
 
-console.log(pieza0);
+
 console.log(player.detectShape(hex, tablero));
 if (player.detectShape(hex, tablero) == true){
   points.addPoints(200);
 }
 console.log(points.puntaje);
 console.log(player.isGameOver(tablero));
-
-
+let pieza0 = generator.crearFichas(6, "verde");
+let pieza1 = generator.crearFichas(6, "verde");
+let pieza2 = generator.crearFichas(6, "verde");
+let pieza3 = generator.crearFichas(6, "verde");
+let pieza4 = generator.crearFichas(6, "verde");
+generator.setFichas(pieza0);
+generator.setFichas(pieza1);
+generator.setFichas(pieza2);
+generator.setFichas(pieza3);
+generator.setFichas(pieza4);
+console.log(pieza0);
+console.log(pieza1);
+console.log(pieza2);
+console.log(pieza3);
+console.log(pieza4);

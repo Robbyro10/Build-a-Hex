@@ -11,8 +11,10 @@ import { Ficha } from './Ficha';
         return casillas;
     }
 
-    crearFichas (n: number, color: string): Ficha[]{
+    crearFichas (max: number, color: string): Ficha[]{
       var fichas: Ficha[] = [];
+      max = Math.floor(max);
+      let n = Math.floor(Math.random() * (max - 1) + 1);
       for (let i = 0; i < n; i++){
         fichas.push(new Ficha(color));
       }
