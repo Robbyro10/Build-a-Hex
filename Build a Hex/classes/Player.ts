@@ -1,5 +1,6 @@
 import {Ficha} from './Ficha';
 import {Casilla} from './Casilla';
+import { Shape } from './Shape';
 import { Puntaje } from './Puntaje';
 
 export class Player {
@@ -8,10 +9,11 @@ export class Player {
         casilla.ficha = ficha;
     }
 
-    detectShape (shape: number[], tablero: Casilla[]): boolean{
+    detectShape (shape: Shape, nodes: number[], tablero: Casilla[]): boolean{
         let ans: boolean = false;
-        for (let i = 0; i < shape.length - 1; i++){ 
-          if (tablero[shape[i]].ficha?.color == tablero[shape[i+1]].ficha?.color){
+        if (shape.sides != nodes.length){return false;}
+        for (let i = 0; i < nodes.length - 1; i++){ 
+          if (tablero[nodes[i]].ficha?.color == tablero[nodes[i+1]].ficha?.color){
             ans = true;
           }
           else return false;

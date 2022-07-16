@@ -10,3 +10,11 @@ export class Puntaje {
         this.puntaje += points;
     }
 }
+
+class Calculator {
+
+}
+
+class Linear extends Calculator{
+
+}

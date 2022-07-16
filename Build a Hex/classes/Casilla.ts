@@ -1,12 +1,15 @@
 
 import { Ficha } from "./Ficha";
+import { Shape } from "./Shape";
 
 export class Casilla {
     vecinos: Array<Casilla> = new Array<Casilla>();
+    shape: Shape;
     id: number;
     ficha?: Ficha;
   
-    constructor (id:number, ficha?: Ficha){
+    constructor (shape: Shape, id:number, ficha?: Ficha){
+      this.shape = shape;
       this.ficha = ficha;
       this.id = id;
     }

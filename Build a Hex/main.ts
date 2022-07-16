@@ -6,17 +6,19 @@ import {Player} from './classes/Player';
 import {Generator} from './classes/Generator';
 import { Puntaje } from './classes/Puntaje';
 import { Casilla } from './classes/Casilla';
+import { Hexagon } from './classes/Shape';
 
 //Implementation
 
 let player = new Player;
 let generator = new Generator;
 let points = new Puntaje(0);
+let hexagon = new Hexagon(6);
 
-let tablero = generator.crearCasillas(54);
-let hex = [0,1,2,8,9,10];
-let pieza1: Ficha[] = generator.crearPieza(6,"azul");
+let pieza1: Ficha[] = generator.crearPieza(hexagon,"azul");
 generator.setPieza(pieza1);
+
+let tablero = generator.crearCasillas(hexagon, 54);
 generator.setTablero(tablero);
 
 let ficha0 = new Ficha("rojo");
@@ -34,9 +36,9 @@ player.insertar(ficha4, tablero[9]);
 player.insertar(ficha5, tablero[10]);
 player.insertar(ficha5, tablero[53]);
 
-
-console.log(player.detectShape(hex, tablero));
-if (player.detectShape(hex, tablero) == true){
+let hex = [0,1,2,8,9,10];
+console.log(player.detectShape(hexagon, hex, tablero));
+if (player.detectShape(hexagon, hex, tablero) == true){
   points.addPoints(200);
 }
 console.log(points.puntaje);
