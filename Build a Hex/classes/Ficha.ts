@@ -1,11 +1,14 @@
   import { Nodo } from "./Nodo";
 
-  export class Ficha extends Nodo{
+  export class Ficha {
     color: String;
     vecinos: Array<Ficha> = new Array<Ficha>();
 
     constructor(color: String){
-      super();
       this.color = color;
     } 
+
+    add(ficha: Ficha): void {
+      this.vecinos.push(ficha);
+  }
   }
