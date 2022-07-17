@@ -1,20 +1,19 @@
 import {Casilla} from './Casilla';
 import { Ficha } from './Ficha';
-import { Shape } from './Shape';
 
  export class Generator {
     //creates an array of Casillas with its respective id
-    crearCasillas (shape: Shape, n: number): Casilla[]{
+    crearCasillas (n: number): Casilla[]{
         var casillas: Casilla[] = [];
         for (let i = 0; i < n; i++){
-          casillas.push(new Casilla(shape, i));
+          casillas.push(new Casilla(i));
         }
         return casillas;
     }
 
-    crearPieza(shape: Shape, color: string): Ficha[]{
+    crearPieza(shape: number, color: string): Ficha[]{
       var fichas: Ficha[] = [];
-      let max = shape.sides;
+      let max = shape;
       max = Math.floor(max);
       let n = Math.floor(Math.random() * (max - 1) + 1);
       for (let i = 0; i < n; i++){
@@ -34,7 +33,6 @@ import { Shape } from './Shape';
 
     setTablero(tablero: Casilla[]): void{
         var row: number[] = [7,16,27,38,47,54];
-        //var row: number[] = [7,9,11,11,9,7];
         let i:number = 0;
       
         //first row

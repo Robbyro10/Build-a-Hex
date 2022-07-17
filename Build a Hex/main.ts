@@ -4,8 +4,8 @@
 import {Player} from './classes/Player';
 import {Generator} from './classes/Generator';
 import { Puntaje } from './classes/Puntaje';
-import { Shape} from './classes/Shape';
-import { Nodo } from './classes/Nodo'; 
+import { Triangular } from './classes/Casilla';
+import { Triangulo } from './classes/Ficha';
 import { Ficha } from './classes/Ficha'; 
 
 //Implementation
@@ -13,21 +13,19 @@ import { Ficha } from './classes/Ficha';
 let player = new Player;
 let generator = new Generator;
 let points = new Puntaje(0, 1);
-let hexagon = new Shape(6);
-let triangle = new Shape(3);
 
-let pieza1: Ficha[] = generator.crearPieza(hexagon,"azul");
+let pieza1: Ficha[] = generator.crearPieza(6,"azul");
 generator.setPieza(pieza1);
 
-let tablero = generator.crearCasillas(triangle, 54);
+let tablero: Triangular[] = generator.crearCasillas(54);
 generator.setTablero(tablero);
 
-let ficha0 = new Ficha("rojo");
-let ficha1 = new Ficha("rojo");
-let ficha2 = new Ficha("rojo");
-let ficha3 = new Ficha("rojo");
-let ficha4 = new Ficha("rojo");
-let ficha5 = new Ficha("rojo");
+let ficha0: Triangulo = new Ficha("rojo");
+let ficha1: Triangulo = new Ficha("rojo");
+let ficha2: Triangulo = new Ficha("rojo");
+let ficha3: Triangulo = new Ficha("rojo");
+let ficha4: Triangulo = new Ficha("rojo");
+let ficha5: Triangulo = new Ficha("rojo");
 
 
 player.insertar(ficha0, tablero[0]);
@@ -39,8 +37,8 @@ player.insertar(ficha5, tablero[10]);
 player.insertar(ficha5, tablero[53]);
 
 let hex = [0,1,2,8,9,10];
-console.log(player.detectShape(hexagon, hex, tablero));
-if (player.detectShape(hexagon, hex, tablero) == true){
+console.log(player.detectShape(hex, tablero));
+if (player.detectShape(hex, tablero) == true){
   points.addPoints(200,2);
 }
 console.log(tablero);

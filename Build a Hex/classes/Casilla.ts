@@ -1,18 +1,18 @@
 
 import { Ficha } from "./Ficha";
-import { Shape } from "./Shape";
 import { Nodo } from "./Nodo";
 
 export class Casilla extends Nodo{
-    vecinos: Array<Casilla> = new Array<Casilla>();
-    shape: Shape;
-    id: number;
     ficha?: Ficha;
+    id: number;
   
-    constructor (shape: Shape, id:number, ficha?: Ficha){
+    constructor (id:number, ficha?: Ficha){
       super();
-      this.shape = shape;
-      this.ficha = ficha;
       this.id = id;
+      this.ficha = ficha;
     }
+  }
+
+  export class Triangular extends Casilla {
+  
   }
