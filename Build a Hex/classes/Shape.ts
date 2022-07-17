@@ -7,6 +7,3 @@ export class Shape {
     }
 }
 
-export class Hexagon extends Shape {
-    
-}

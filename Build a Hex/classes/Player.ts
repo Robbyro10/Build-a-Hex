@@ -2,6 +2,7 @@ import {Ficha} from './Ficha';
 import {Casilla} from './Casilla';
 import { Shape } from './Shape';
 import { Puntaje } from './Puntaje';
+import { Nodo } from './Nodo';
 
 export class Player {
 
