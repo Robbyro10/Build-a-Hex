@@ -36,10 +36,10 @@ player.insertar(ficha5, tablero[10]);
 player.insertar(ficha5, tablero[53]);
 
 let hex = [0,1,2,8,9,10];
-console.log(player.detectShape(hex, tablero));
+console.log(tablero);
+console.log('Is there a Hexagon?: ' + player.detectShape(hex, tablero));
 if (player.detectShape(hex, tablero) == true){
   points.addPoints(200,2);
 }
-console.log(tablero);
-console.log(points.puntaje);
-console.log(player.isGameOver(tablero));
+console.log('Current Points: ' + points.puntaje);
+console.log('Is the game over??: ' + player.isGameOver(tablero));

@@ -1,15 +1,15 @@
 
-import { Ficha } from "./Token";
+import { Ficha, Token } from "./Token";
 import { Nodo } from "./Nodo";
 
 export class Box extends Nodo{
-    ficha?: Ficha;
+    token?: Token;
     id: number;
   
-    constructor (id:number, ficha?: Ficha){
+    constructor (id:number, token?: Token){
       super();
       this.id = id;
-      this.ficha = ficha;
+      this.token = token;
     }
   }
 
