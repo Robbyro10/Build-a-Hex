@@ -1,18 +1,22 @@
 
 export class Puntaje {
     puntaje: number;
+    calculator: Calculator;
 
-    constructor(puntaje: number){
+    constructor(puntaje: number, calculator: Calculator){
         this.puntaje = puntaje;
+        this.calculator = calculator;
     }
 
-    addPoints(points:number): void {
-        this.puntaje += points;
+    get getCalculator(): Calculator { return this.calculator; };
+
+    addPoints(points:number, mode: number): void {
+        this.puntaje += mode * points;
     }
 }
 
 class Calculator {
-
+    
 }
 
 class Linear extends Calculator{

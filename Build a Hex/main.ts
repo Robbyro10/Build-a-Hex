@@ -12,7 +12,7 @@ import { Ficha } from './classes/Ficha';
 
 let player = new Player;
 let generator = new Generator;
-let points = new Puntaje(0);
+let points = new Puntaje(0, 1);
 let hexagon = new Shape(6);
 let triangle = new Shape(3);
 
@@ -41,7 +41,7 @@ player.insertar(ficha5, tablero[53]);
 let hex = [0,1,2,8,9,10];
 console.log(player.detectShape(hexagon, hex, tablero));
 if (player.detectShape(hexagon, hex, tablero) == true){
-  points.addPoints(200);
+  points.addPoints(200,2);
 }
 console.log(tablero);
 console.log(points.puntaje);
