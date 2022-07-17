@@ -1,8 +1,8 @@
 
-import { Ficha } from "./Ficha";
+import { Ficha } from "./Token";
 import { Nodo } from "./Nodo";
 
-export class Casilla extends Nodo{
+export class Box extends Nodo{
     ficha?: Ficha;
     id: number;
   
@@ -13,6 +13,6 @@ export class Casilla extends Nodo{
     }
   }
 
-  export class Triangular extends Casilla {
+  export class Casilla extends Box {
   
   }

@@ -1,5 +1,5 @@
-import {Ficha} from './Ficha';
-import {Casilla} from './Casilla';
+import {Ficha} from './Token';
+import {Casilla} from './Box';
 import { Puntaje } from './Puntaje';
 import { Nodo } from './Nodo';
 

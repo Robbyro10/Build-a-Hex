@@ -4,9 +4,8 @@
 import {Player} from './classes/Player';
 import {Generator} from './classes/Generator';
 import { Puntaje } from './classes/Puntaje';
-import { Triangular } from './classes/Casilla';
-import { Triangulo } from './classes/Ficha';
-import { Ficha } from './classes/Ficha'; 
+import { Casilla } from './classes/Box';
+import { Ficha, Token } from './classes/Token';
 
 //Implementation
 
@@ -17,15 +16,15 @@ let points = new Puntaje(0, 1);
 let pieza1: Ficha[] = generator.crearPieza(6,"azul");
 generator.setPieza(pieza1);
 
-let tablero: Triangular[] = generator.crearCasillas(54);
+let tablero: Casilla[] = generator.crearCasillas(54);
 generator.setTablero(tablero);
 
-let ficha0: Triangulo = new Ficha("rojo");
-let ficha1: Triangulo = new Ficha("rojo");
-let ficha2: Triangulo = new Ficha("rojo");
-let ficha3: Triangulo = new Ficha("rojo");
-let ficha4: Triangulo = new Ficha("rojo");
-let ficha5: Triangulo = new Ficha("rojo");
+let ficha0: Token = new Ficha("rojo");
+let ficha1: Token = new Ficha("rojo");
+let ficha2: Token = new Ficha("rojo");
+let ficha3: Token = new Ficha("rojo");
+let ficha4: Token = new Ficha("rojo");
+let ficha5: Token = new Ficha("rojo");
 
 
 player.insertar(ficha0, tablero[0]);

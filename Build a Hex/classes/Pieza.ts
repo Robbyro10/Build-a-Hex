@@ -1,4 +1,4 @@
-import { Ficha } from "./Ficha";
+import { Ficha } from "./Token";
 
 class Pieza {
     map: number;

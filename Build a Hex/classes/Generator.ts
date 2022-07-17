@@ -1,5 +1,5 @@
-import {Casilla} from './Casilla';
-import { Ficha } from './Ficha';
+import {Casilla} from './Box';
+import { Ficha } from './Token';
 
  export class Generator {
     //creates an array of Casillas with its respective id
