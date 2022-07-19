@@ -16,6 +16,11 @@ export class Player {
           if (tablero[nodes[i]].ficha?.color == tablero[nodes[i+1]].ficha?.color){
             ans = true;
           }
+          if (ans == true){
+            for (var node of nodes){
+              this.removeFicha(tablero[node]);
+            }
+          }
           else return false;
         }
         return ans;
