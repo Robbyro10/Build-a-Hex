@@ -35,10 +35,20 @@ player.insertar(ficha4, tablero[9]);
 player.insertar(ficha5, tablero[10]);
 
 let hex = [0,1,2,8,9,10];
+
 console.log(tablero);
+
 console.log('Is there a Hexagon?: ' + player.detectShape(hex, tablero));
+
+//if shape is detected, the fichas are taken removed and the points are added
 if (player.detectShape(hex, tablero) == true){
+
+  for (var i of hex){
+    player.removeFicha(tablero[i]);
+  }
   points.addPoints(200,2);
+
 }
+console.log(tablero);
 console.log('Current Points: ' + points.puntaje);
 console.log('Is the game over??: ' + player.isGameOver(tablero));
