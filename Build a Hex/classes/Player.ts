@@ -1,19 +1,19 @@
-import {Token, Ficha} from './Token';
-import {Box, Casilla} from './Box';
+import {FichaTriangular, Ficha} from './Ficha';
+import {CasillaTriangular, Casilla} from './Casilla';
 import { Puntaje } from './Puntaje';
 import { Nodo } from './Nodo';
 
 export class Player {
 
-    insertar (token: Token, box:Box): void{
-        box.token = token;
+    insertar (ficha: Ficha, box:Casilla): void{
+        box.ficha = ficha;
     }
 
-    detectShape (nodes: number[], tablero: Box[]): boolean{
+    detectShape (nodes: number[], tablero: Casilla[]): boolean{
         let ans: boolean = false;
         if (nodes.length != 6){return false;} //Checks the provided array refers to a hexagon
         for (let i = 0; i < nodes.length - 1; i++){ 
-          if (tablero[nodes[i]].token?.color == tablero[nodes[i+1]].token?.color){
+          if (tablero[nodes[i]].ficha?.color == tablero[nodes[i+1]].ficha?.color){
             ans = true;
           }
           else return false;
@@ -21,14 +21,14 @@ export class Player {
         return ans;
     }
 
-    removeFicha (box: Box): void{
-        delete(box.token);
+    removeFicha (box: Casilla): void{
+        delete(box.ficha);
     }
 
-    isGameOver (tablero: Box[]): boolean{
+    isGameOver (tablero: Casilla[]): boolean{
       let resp: boolean = false;
       for (var casilla of tablero){
-        if (!casilla.token){
+        if (!casilla.ficha){
           return false;
         }
       }

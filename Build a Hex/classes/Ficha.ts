@@ -1,6 +1,6 @@
   import { Nodo } from "./Nodo";
 
-  export class Token extends Nodo{
+  export class Ficha extends Nodo{
     color: String;
 
     constructor(color: String){
@@ -9,6 +9,6 @@
     } 
   }
 
-  export class Ficha extends Token{
+  export class FichaTriangular extends Ficha{
 
   }
