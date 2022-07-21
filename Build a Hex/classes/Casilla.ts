@@ -21,10 +21,5 @@ export class Casilla extends Nodo{
   }
 
   export class CasillaTriangular extends Casilla {
-    orientation: boolean;
-
-    constructor(id: number, orientation: boolean){
-      super(id);
-      this.orientation = orientation;
-    }
+    
   }

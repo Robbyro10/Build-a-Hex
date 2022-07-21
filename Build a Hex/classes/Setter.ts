@@ -1,39 +1,39 @@
 import {CasillaTriangular, Casilla} from './Casilla';
 import { FichaTriangular, Ficha } from './Ficha';
 
- export class Generator {
+ export class Setter {
 
-    //creates an array of Casillas with its respective id
-    crearCasillas (n: number): Casilla[]{
-        var casillas: Casilla[] = [];
-        for (let i = 0; i < n; i++){
-          casillas.push(new Casilla(i));
-        }
-        return casillas;
-    }
+    setOrientation(tablero: CasillaTriangular[]): void {
+      //first row
+      let i: number = 0;
 
-    crearPieza(shape: number, color: string): Ficha[]{
-      var fichas: Ficha[] = [];
-      let max = shape;
-      max = Math.floor(max);
-      let n = Math.floor(Math.random() * (max - 1) + 1);
-      for (let i = 0; i < n; i++){
-        fichas.push(new Ficha(color));
+      for (i = 0; i < 7; i++){
+        if (i%2==0){tablero[i].orientation = true;}
+        else {tablero[i].orientation = false;}
       }
-      return fichas;
-    }
-
-    setPieza (fichas: Ficha[]): void{
-      if (fichas.length > 1){
-        for (let i = 0; i < fichas.length-1;i++){
-          fichas[i].add(fichas[i+1]);
-          fichas[i+1].add(fichas[i]);
-        }
+      //second row
+      for (i = 7; i < 16; i++){
+        if (i%2!=0){tablero[i].orientation = true;}
+        else {tablero[i].orientation = false;}
+      }
+      //third and fourth
+      for (i = 16; i < 38; i++){
+        if (i%2==0){tablero[i].orientation = true;}
+        else {tablero[i].orientation = false;}
+      }
+      //fifth row
+      for (i = 38; i < 47; i++){
+        if (i%2!=0){tablero[i].orientation = true;}
+        else {tablero[i].orientation = false;}
+      }
+      //sixth row
+      for (i = 47; i < 54; i++){
+        if (i%2==0){tablero[i].orientation = true;}
+        else {tablero[i].orientation = false;}
       }
     }
-
-    setTablero(tablero: Casilla[]): void{
-        var row: number[] = [7,16,27,38,47,54];
+    
+    setTablero(tablero: CasillaTriangular[]): void{
         let i:number = 0;
       
         //first row
