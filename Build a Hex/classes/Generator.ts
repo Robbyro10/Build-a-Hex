@@ -2,7 +2,7 @@ import {CasillaTriangular, Casilla} from './Casilla';
 import { FichaTriangular, Ficha } from './Ficha';
 
  export class Generator {
-  
+
     //creates an array of Casillas with its respective id
     crearCasillas (n: number): Casilla[]{
         var casillas: Casilla[] = [];

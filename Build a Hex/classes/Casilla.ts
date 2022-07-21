@@ -5,10 +5,10 @@ import { Nodo } from "./Nodo";
 export class Casilla extends Nodo{
     ficha?: Ficha;
     id: number;
-    orientation: boolean;
+    orientation?: boolean;
     
   
-    constructor (id:number, orientation: boolean, ficha?: Ficha){
+    constructor (id:number, orientation?: boolean, ficha?: Ficha){
       super();
       this.id = id;
       this.orientation = orientation;
@@ -21,5 +21,10 @@ export class Casilla extends Nodo{
   }
 
   export class CasillaTriangular extends Casilla {
-    
+    orientation: boolean;
+
+    constructor(id: number, orientation: boolean){
+      super(id);
+      this.orientation = orientation;
+    }
   }
