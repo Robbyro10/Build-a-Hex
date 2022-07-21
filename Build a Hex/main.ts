@@ -26,14 +26,20 @@ let tablero: Casilla[] = casillaCreator.crearCasillas(54);
 setter.setOrientation(tablero);
 setter.setTablero(tablero);
 
-let ficha0: Ficha = new FichaTriangular("rojo", true);
+let ficha0: Ficha = new FichaTriangular("rojo", true); 
+let ficha1: Ficha = new FichaTriangular("rojo", false);
+let ficha2: Ficha = new FichaTriangular("rojo", true);
+let ficha3: Ficha = new FichaTriangular("rojo", false);
+let ficha4: Ficha = new FichaTriangular("rojo", true);
+let ficha5: Ficha = new FichaTriangular("rojo", false);
+
 
 ficha0.insertar(tablero[0]);
-ficha0.insertar(tablero[1]);
-ficha0.insertar(tablero[2]);
-ficha0.insertar(tablero[8]);
-ficha0.insertar(tablero[9]);
-ficha0.insertar(tablero[10]);
+ficha1.insertar(tablero[1]);
+ficha2.insertar(tablero[2]);
+ficha3.insertar(tablero[8]);
+ficha4.insertar(tablero[9]);
+ficha5.insertar(tablero[10]);
 
 
 let hex = [0,1,2,8,9,10];
@@ -46,6 +52,6 @@ console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex, tablero));
 if (hexagon.detectHexagon(hex, tablero) == true){
   points.addPoints(200,2);
 }
-//console.log(tablero);
+console.log(tablero);
 console.log('Current Points: ' + points.puntaje);
 console.log('Is the game over??: ' + gameOver.isGameOver(tablero));
