@@ -3,7 +3,7 @@ import { FichaTriangular, Ficha } from './Ficha';
 
  export class Setter {
 
-    setOrientation(tablero: CasillaTriangular[]): void {
+    setCasillaOrientation(tablero: CasillaTriangular[]): void {
       //first row
       let i: number = 0;
 

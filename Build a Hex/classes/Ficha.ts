@@ -12,11 +12,14 @@
     } 
 
     insertar (box:Casilla): void{
-      if (box.orientation == this.orientation){
-        box.ficha = this;
-      }
-      else {
-        console.log("Ficha insertion failed due to incompatible Ficha and Casilla orientation");
+      if (!box.ficha){
+        if (box.orientation == this.orientation){
+          box.ficha = this;
+        }else {
+          console.log("Ficha insertion failed due to incompatible Ficha and Casilla orientation.");
+        }
+      }else{
+        console.log("Ficha insertion failed due to Casilla begin ocuppied.");
       }
     }
 

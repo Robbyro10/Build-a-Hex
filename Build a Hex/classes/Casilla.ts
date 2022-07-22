@@ -7,7 +7,6 @@ export class Casilla extends Nodo{
     id: number;
     orientation?: boolean;
     
-  
     constructor (id:number, orientation?: boolean, ficha?: Ficha){
       super();
       this.id = id;

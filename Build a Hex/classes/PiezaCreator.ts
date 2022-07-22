@@ -9,6 +9,8 @@ export class PiezaCreator {
         let n = Math.floor(Math.random() * (max - 1) + 1);
         for (let i = 0; i < n; i++){
           fichas.push(new Ficha(color));
+          if (i%2 == 0){fichas[i].orientation = true;}
+          else {fichas[i].orientation = false; }
         }
         return fichas;
       }

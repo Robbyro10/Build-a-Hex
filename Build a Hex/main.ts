@@ -19,12 +19,26 @@ let casillaCreator = new CasillaCreator;
 let gameOver = new GameOver;
 let points = new Puntaje(0, 1);
 
-let pieza1: Ficha[] = piezaCreator.crearPieza(6,"azul");
-piezaCreator.setPieza(pieza1);
-
 let tablero: Casilla[] = casillaCreator.crearCasillas(54);
-setter.setOrientation(tablero);
+setter.setCasillaOrientation(tablero);
 setter.setTablero(tablero);
+
+//Test Case 1: Pieza Generation
+
+let pieza0: Ficha[] = piezaCreator.crearPieza(6,"azul");
+let pieza1: Ficha[] = piezaCreator.crearPieza(6,"verde");
+let pieza2: Ficha[] = piezaCreator.crearPieza(6,"amarillo");
+
+piezaCreator.setPieza(pieza0);
+piezaCreator.setPieza(pieza1);
+piezaCreator.setPieza(pieza2);
+
+console.log(pieza0); 
+console.log(pieza1); 
+console.log(pieza2);
+
+
+//TEST CASE 2: Ficha Insertion
 
 let ficha0: Ficha = new FichaTriangular("rojo", true); 
 let ficha1: Ficha = new FichaTriangular("rojo", false);
@@ -32,8 +46,10 @@ let ficha2: Ficha = new FichaTriangular("rojo", true);
 let ficha3: Ficha = new FichaTriangular("rojo", false);
 let ficha4: Ficha = new FichaTriangular("rojo", true);
 let ficha5: Ficha = new FichaTriangular("rojo", false);
+let ficha6: Ficha = new FichaTriangular("rojo", false);
+let ficha7: Ficha = new FichaTriangular("amarillo", false);
 
-
+//Should all get inserted
 ficha0.insertar(tablero[0]);
 ficha1.insertar(tablero[1]);
 ficha2.insertar(tablero[2]);
@@ -41,17 +57,22 @@ ficha3.insertar(tablero[8]);
 ficha4.insertar(tablero[9]);
 ficha5.insertar(tablero[10]);
 
+//Should not get inserted
+ficha6.insertar(tablero[11]);
+ficha7.insertar(tablero[0]);
 
+//console.log(tablero);
+
+//TEST CASE 3: Hexagon Detection
+//we declare an array of id's to check for fichas
 let hex = [0,1,2,8,9,10];
-
-console.log(tablero);
 
 console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex, tablero));
 
-//if shape is detected, the fichas are taken removed and the points are added
+//If a Hexagon is detected, the fichas are removed and the points are added
 if (hexagon.detectHexagon(hex, tablero) == true){
   points.addPoints(200,2);
-}
-console.log(tablero);
+} 
+//console.log(tablero);
 console.log('Current Points: ' + points.puntaje);
 console.log('Is the game over??: ' + gameOver.isGameOver(tablero));
