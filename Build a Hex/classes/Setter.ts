@@ -33,7 +33,7 @@ import { FichaTriangular, Ficha } from './Ficha';
       }
     }
     
-    setTablero(tablero: CasillaTriangular[]): void{
+    setTableroHexagonal(tablero: CasillaTriangular[]): void{
         let i:number = 0;
       
         //first row

@@ -20,10 +20,10 @@ let casillaCreator = new CasillaCreator;
 let gameOver = new GameOver;
 let points = new Puntaje(0, 1);
 
-
-let tablero: Casilla[] = casillaCreator.crearCasillas(54);
-setter.setCasillaOrientation(tablero);
-setter.setTablero(tablero);
+//Refers to the specific board of 54 fichas and in the shape of a hexagon
+let tableroHexagonal: Casilla[] = casillaCreator.crearCasillas(54);
+setter.setCasillaOrientation(tableroHexagonal);
+setter.setTableroHexagonal(tableroHexagonal);
 
 //Test Case 1: Pieza Generation
 
@@ -52,29 +52,29 @@ let ficha6: Ficha = new FichaTriangular("Red", false);
 let ficha7: Ficha = new FichaTriangular("Yellow", false);
 
 //Should all get inserted
-ficha0.insertar(tablero[0]);
-ficha1.insertar(tablero[1]);
-ficha2.insertar(tablero[2]);
-ficha3.insertar(tablero[8]);
-ficha4.insertar(tablero[9]);
-ficha5.insertar(tablero[10]);
+ficha0.insertar(tableroHexagonal[0]);
+ficha1.insertar(tableroHexagonal[1]);
+ficha2.insertar(tableroHexagonal[2]);
+ficha3.insertar(tableroHexagonal[8]);
+ficha4.insertar(tableroHexagonal[9]);
+ficha5.insertar(tableroHexagonal[10]);
 
 //Should not get inserted
-ficha6.insertar(tablero[11]);
-ficha7.insertar(tablero[0]);
+ficha6.insertar(tableroHexagonal[11]);
+ficha7.insertar(tableroHexagonal[0]);
 
-console.log(tablero);
+console.log(tableroHexagonal);
 
 //TEST CASE 3: Hexagon Detection
 //we declare an array of id's to check for fichas
 let hex = [0,1,2,8,9,10];
 
-console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex, tablero));
+console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex, tableroHexagonal));
 
 //If a Hexagon is detected, the fichas are removed and the points are added
-if (hexagon.detectHexagon(hex, tablero) == true){
+if (hexagon.detectHexagon(hex, tableroHexagonal) == true){
   points.addPoints(200,2);
 } 
 //console.log(tablero);
 console.log('Current Points: ' + points.puntaje);
-console.log('Is the game over??: ' + gameOver.isGameOver(tablero));
+console.log('Is the game over??: ' + gameOver.isGameOver(tableroHexagonal));
