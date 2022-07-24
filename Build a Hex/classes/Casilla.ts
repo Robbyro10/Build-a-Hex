@@ -2,7 +2,7 @@
 import { Ficha, FichaTriangular } from "./Ficha";
 import { Nodo } from "./Nodo";
 
-export class Casilla extends Nodo{
+export class Casilla extends Nodo <Casilla> {
     ficha?: Ficha;
     id: number;
     orientation?: boolean;

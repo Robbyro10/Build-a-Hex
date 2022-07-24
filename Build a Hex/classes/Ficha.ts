@@ -1,11 +1,12 @@
   import { Nodo } from "./Nodo";
   import { Casilla } from "./Casilla";
+  import { Colors } from "../CustomTypes/Colors";
 
-  export class Ficha extends Nodo{
-    color: String;
+  export class Ficha extends Nodo <Ficha>{
+    color: Colors;
     orientation?: boolean;
 
-    constructor(color: String, orientation?:boolean){
+    constructor(color: Colors, orientation?:boolean){
       super();
       this.color = color;
       this.orientation = orientation;

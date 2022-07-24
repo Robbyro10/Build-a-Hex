@@ -1,8 +1,8 @@
 
-export class Nodo {
-    vecinos: Array<Nodo> = new Array<Nodo>();
+export class Nodo <T> {
+    vecinos: Array<T> = new Array<T>();
 
-    add(nodo: Nodo): void {
+    add(nodo: T): void {
         this.vecinos.push(nodo);
     }
 }

@@ -1,8 +1,9 @@
 import { Ficha } from "./Ficha";
+import { Colors } from "../CustomTypes/Colors";
 
 export class PiezaCreator {
 
-    crearPieza(shape: number, color: string): Ficha[]{
+    crearPieza(shape: number, color: Colors): Ficha[]{
         var fichas: Ficha[] = [];
         let max = shape;
         max = Math.floor(max);

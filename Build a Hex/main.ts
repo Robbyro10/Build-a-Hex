@@ -10,6 +10,7 @@ import { Hexagon } from './classes/Hexagon';
 import { GameOver } from './classes/GameOver';
 import { PiezaCreator } from './classes/PiezaCreator';
 import { Setter } from './classes/Setter';
+import { Nodo } from './classes/Nodo';
 
 //Implementation
 let hexagon = new Hexagon;
@@ -19,35 +20,36 @@ let casillaCreator = new CasillaCreator;
 let gameOver = new GameOver;
 let points = new Puntaje(0, 1);
 
+
 let tablero: Casilla[] = casillaCreator.crearCasillas(54);
 setter.setCasillaOrientation(tablero);
 setter.setTablero(tablero);
 
 //Test Case 1: Pieza Generation
 
-let pieza0: Ficha[] = piezaCreator.crearPieza(6,"azul");
-let pieza1: Ficha[] = piezaCreator.crearPieza(6,"verde");
-let pieza2: Ficha[] = piezaCreator.crearPieza(6,"amarillo");
+let pieza0: Ficha[] = piezaCreator.crearPieza(6,"Blue");
+let pieza1: Ficha[] = piezaCreator.crearPieza(6,"Green");
+let pieza2: Ficha[] = piezaCreator.crearPieza(6,"Yellow");
 
 piezaCreator.setPieza(pieza0);
 piezaCreator.setPieza(pieza1);
 piezaCreator.setPieza(pieza2);
-
+/*
 console.log(pieza0); 
 console.log(pieza1); 
 console.log(pieza2);
-
+*/
 
 //TEST CASE 2: Ficha Insertion
 
-let ficha0: Ficha = new FichaTriangular("rojo", true); 
-let ficha1: Ficha = new FichaTriangular("rojo", false);
-let ficha2: Ficha = new FichaTriangular("rojo", true);
-let ficha3: Ficha = new FichaTriangular("rojo", false);
-let ficha4: Ficha = new FichaTriangular("rojo", true);
-let ficha5: Ficha = new FichaTriangular("rojo", false);
-let ficha6: Ficha = new FichaTriangular("rojo", false);
-let ficha7: Ficha = new FichaTriangular("amarillo", false);
+let ficha0: Ficha = new FichaTriangular("Red", true); 
+let ficha1: Ficha = new FichaTriangular("Red", false);
+let ficha2: Ficha = new FichaTriangular("Red", true);
+let ficha3: Ficha = new FichaTriangular("Red", false);
+let ficha4: Ficha = new FichaTriangular("Red", true);
+let ficha5: Ficha = new FichaTriangular("Red", false);
+let ficha6: Ficha = new FichaTriangular("Red", false);
+let ficha7: Ficha = new FichaTriangular("Yellow", false);
 
 //Should all get inserted
 ficha0.insertar(tablero[0]);
@@ -61,7 +63,7 @@ ficha5.insertar(tablero[10]);
 ficha6.insertar(tablero[11]);
 ficha7.insertar(tablero[0]);
 
-//console.log(tablero);
+console.log(tablero);
 
 //TEST CASE 3: Hexagon Detection
 //we declare an array of id's to check for fichas
