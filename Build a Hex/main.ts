@@ -9,24 +9,21 @@ import { Ficha, FichaTriangular } from './classes/Ficha';
 import { Hexagon } from './classes/Hexagon';
 import { GameOver } from './classes/GameOver';
 import { PiezaCreator } from './classes/PiezaCreator';
-import { CasillaSetter } from './classes/CasillaSetter';
-import { CasillaOrientator } from './classes/CasillaOrientator';
+import { BoardGenerator } from './classes/BoardGenerator';
 
 //Implementation
 let hexagon = new Hexagon;
-let casillaSetter = new CasillaSetter;
+let boardGenerator = new BoardGenerator;
 let piezaCreator = new PiezaCreator;
 let casillaCreator = new CasillaCreator;
-let casillaOrientator = new CasillaOrientator;
 let gameOver = new GameOver;
 let points = new Puntaje(0, 1);
 
 
-
 //Refers to the specific board of 54 fichas and in the shape of a hexagon
 let tableroHexagonal: Casilla[] = casillaCreator.crearCasillas(54);
-casillaOrientator.setCasillaOrientation(tableroHexagonal);
-casillaSetter.setTableroHexagonal(tableroHexagonal);
+boardGenerator.setCasillaOrientation(tableroHexagonal);
+boardGenerator.setTableroHexagonal(tableroHexagonal);
 
 //Test Case 1: Pieza Generation
 
