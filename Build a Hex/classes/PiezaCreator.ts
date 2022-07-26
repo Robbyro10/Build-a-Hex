@@ -19,8 +19,8 @@ export class PiezaCreator {
       setPieza (fichas: Ficha[]): void{
         if (fichas.length > 1){
           for (let i = 0; i < fichas.length-1;i++){
-            fichas[i].add(fichas[i+1]);
-            fichas[i+1].add(fichas[i]);
+            fichas[i].add('Derecha',fichas[i+1]);
+            fichas[i+1].add('Izquierda',fichas[i]);
           }
         }
       }

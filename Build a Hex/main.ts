@@ -22,11 +22,13 @@ let points = new Puntaje(0, 1);
 
 //Refers to the specific board of 54 fichas and in the shape of a hexagon
 let tableroHexagonal: Casilla[] = casillaCreator.crearCasillas(54);
+
 boardGenerator.setCasillaOrientation(tableroHexagonal);
 boardGenerator.setTableroHexagonal(tableroHexagonal);
 
-//Test Case 1: Pieza Generation
 
+//Test Case 1: Pieza Generation
+/*
 let pieza0: Ficha[] = piezaCreator.crearPieza(6,"Blue");
 let pieza1: Ficha[] = piezaCreator.crearPieza(6,"Green");
 let pieza2: Ficha[] = piezaCreator.crearPieza(6,"Yellow");

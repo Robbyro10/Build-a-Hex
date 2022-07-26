@@ -1,8 +1,9 @@
   import { Nodo } from "./Nodo";
   import { Casilla } from "./Casilla";
   import { Colors } from "../CustomTypes/Colors";
+import { directions } from "../CustomTypes/Directions";
 
-  export class Ficha extends Nodo <Ficha>{
+  export class Ficha extends Nodo <directions, Ficha>{
     color: Colors;
     orientation?: boolean;
 

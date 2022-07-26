@@ -1,8 +1,9 @@
 
+import { directions } from "../CustomTypes/Directions";
 import { Ficha, FichaTriangular } from "./Ficha";
 import { Nodo } from "./Nodo";
 
-export class Casilla extends Nodo <Casilla> {
+export class Casilla extends Nodo <directions, Casilla> {
     ficha?: Ficha;
     id: number;
     orientation?: boolean;
