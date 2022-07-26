@@ -42,7 +42,6 @@ console.log(pieza1);
 console.log(pieza2);
 
 //TEST CASE 2: Ficha Insertion
-/*
 let ficha0: Ficha = new FichaTriangular("Red", true); 
 let ficha1: Ficha = new FichaTriangular("Red", false);
 let ficha2: Ficha = new FichaTriangular("Red", true);
@@ -64,7 +63,7 @@ ficha5.insertar(tableroHexagonal[10]);
 ficha6.insertar(tableroHexagonal[11]);
 ficha7.insertar(tableroHexagonal[0]);
 
-//console.log(tableroHexagonal);
+console.log(tableroHexagonal);
 
 //TEST CASE 3: Hexagon Detection
 //we declare an array of id's to check for fichas
@@ -80,4 +79,3 @@ if (hexagon.detectHexagon(hex, tableroHexagonal) == true){
 //console.log(tablero);
 console.log('Current Points: ' + points.puntaje);
 console.log('Is the game over??: ' + gameOver.isGameOver(tableroHexagonal));
-*/
