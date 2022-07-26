@@ -28,22 +28,21 @@ boardGenerator.setTableroHexagonal(tableroHexagonal);
 
 
 //Test Case 1: Pieza Generation
-/*
-let pieza0: Ficha[] = piezaCreator.crearPieza(6,"Blue");
-let pieza1: Ficha[] = piezaCreator.crearPieza(6,"Green");
-let pieza2: Ficha[] = piezaCreator.crearPieza(6,"Yellow");
 
-piezaCreator.setPieza(pieza0);
-piezaCreator.setPieza(pieza1);
-piezaCreator.setPieza(pieza2);
-/*
-console.log(pieza0); 
-console.log(pieza1); 
+let pieza0 = piezaCreator.crearFichas(6, "Black");
+let pieza1 = piezaCreator.crearFichas(6, "Black");
+let pieza2 = piezaCreator.crearFichas(6, "Black");
+
+piezaCreator.setFichas(pieza0);
+piezaCreator.setFichas(pieza1);
+piezaCreator.setFichas(pieza2);
+
+console.log(pieza0);
+console.log(pieza1);
 console.log(pieza2);
-*/
 
 //TEST CASE 2: Ficha Insertion
-
+/*
 let ficha0: Ficha = new FichaTriangular("Red", true); 
 let ficha1: Ficha = new FichaTriangular("Red", false);
 let ficha2: Ficha = new FichaTriangular("Red", true);
@@ -65,10 +64,11 @@ ficha5.insertar(tableroHexagonal[10]);
 ficha6.insertar(tableroHexagonal[11]);
 ficha7.insertar(tableroHexagonal[0]);
 
-console.log(tableroHexagonal);
+//console.log(tableroHexagonal);
 
 //TEST CASE 3: Hexagon Detection
 //we declare an array of id's to check for fichas
+
 let hex = [0,1,2,8,9,10];
 
 console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex, tableroHexagonal));
@@ -80,3 +80,4 @@ if (hexagon.detectHexagon(hex, tableroHexagonal) == true){
 //console.log(tablero);
 console.log('Current Points: ' + points.puntaje);
 console.log('Is the game over??: ' + gameOver.isGameOver(tableroHexagonal));
+*/
