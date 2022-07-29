@@ -1,9 +1,9 @@
   import { Nodo } from "./Nodo";
   import { Casilla } from "./Casilla";
   import { Colors } from "../CustomTypes/Colors";
-import { directions } from "../CustomTypes/Directions";
+  import { directions } from "../CustomTypes/Directions";
 
-  export class Ficha extends Nodo <directions, Ficha>{
+  export abstract class Ficha extends Nodo <directions, Ficha>{
     color: Colors;
     orientation?: boolean;
 
@@ -24,9 +24,9 @@ import { directions } from "../CustomTypes/Directions";
         console.log("Ficha insertion failed due to Casilla begin ocuppied.");
       }
     }
-
   }
 
   export class FichaTriangular extends Ficha{
     
+
   }

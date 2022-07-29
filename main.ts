@@ -28,7 +28,6 @@ boardGenerator.setTableroHexagonal(tableroHexagonal);
 
 
 //Test Case 1: Pieza Generation
-/*
 
 let pieza0 = piezaCreator.crearFichas(6, "Black");
 let pieza1 = piezaCreator.crearFichas(6, "Black");
@@ -41,7 +40,6 @@ piezaCreator.setFichas(pieza2);
 console.log(pieza0);
 console.log(pieza1);
 console.log(pieza2);
-*/
 
 //TEST CASE 2: Ficha Insertion
 let ficha0: Ficha = new FichaTriangular("Red", true); 
