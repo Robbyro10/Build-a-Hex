@@ -85,3 +85,4 @@ if (hexagon.detectHexagon(hex, tableroHexagonal) == true){
 //console.log(tablero);
 console.log('Current Points: ' + points.puntaje);
 console.log('Is the game over??: ' + gameOver.isGameOver(tableroHexagonal));
+

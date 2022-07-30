@@ -3,7 +3,7 @@ import { directions } from "../CustomTypes/Directions";
 import { Ficha, FichaTriangular } from "./Ficha";
 import { Nodo } from "./Nodo";
 
-export class Casilla extends Nodo <directions, Casilla> {
+export class Casilla extends Nodo <directions, number> {
     ficha?: Ficha;
     id: number;
     orientation?: boolean;
@@ -14,7 +14,7 @@ export class Casilla extends Nodo <directions, Casilla> {
       this.orientation = orientation;
       this.ficha = ficha;
     }
-
+    
     removeFicha (): void{
       delete this.ficha;
     }

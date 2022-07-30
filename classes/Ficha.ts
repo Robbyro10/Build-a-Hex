@@ -13,17 +13,21 @@
       this.orientation = orientation;
     } 
 
-    //Only works for singular fichas
-    insertar (box:Casilla): void{
-      if (!box.ficha){
-        if (box.orientation == this.orientation){
-          box.ficha = this;
+    //Only for singular fichas
+    insertar (casilla:Casilla): void{
+      if (!casilla.ficha){
+        if (casilla.orientation == this.orientation){
+          casilla.ficha = this;
         }else {
           console.log("Ficha insertion failed due to incompatible Ficha and Casilla orientation.");
         }
       }else{
         console.log("Ficha insertion failed due to Casilla begin ocuppied.");
       }
+    }
+
+    insertar2 (fichas: Ficha[], casilla: Casilla, tablero: Casilla[]): void{
+      
     }
 
     //Only works for singular fichas
