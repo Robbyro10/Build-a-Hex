@@ -26,10 +26,6 @@
       }
     }
 
-    insertar2 (fichas: Ficha[], casilla: Casilla, tablero: Casilla[]): void{
-      
-    }
-
     //Only works for singular fichas
     flip(): void{
       if (this.orientation){

@@ -1,5 +1,6 @@
 import { Ficha, FichaTriangular } from "./Ficha";
 import { Colors } from "../CustomTypes/Colors";
+import { Casilla } from "./Casilla";
 
 export class PiezaCreator {
       
@@ -14,7 +15,7 @@ export class PiezaCreator {
         }
         return fichas;
       }
-      
+
       setFichaOrientation (fichas: FichaTriangular[]): void{
         for (let i = 0; i < fichas.length; i++){
           if (i % 2 == 0){
