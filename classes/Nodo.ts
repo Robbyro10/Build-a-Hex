@@ -1,6 +1,6 @@
 
 
-export class Nodo <D,T> {
+export abstract class Nodo <D,T> {
     
     vecinos = new Map<D,T>();
     

@@ -28,28 +28,34 @@ boardGenerator.setTableroHexagonal(tableroHexagonal);
 
 
 //Test Case 1: Pieza Generation
+/*
+let pieza0: FichaTriangular[] = piezaCreator.crearFichas(6, "Black");
+let pieza1: FichaTriangular[] = piezaCreator.crearFichas(6, "Black");
+let pieza2: FichaTriangular[] = piezaCreator.crearFichas(6, "Black");
 
-let pieza0 = piezaCreator.crearFichas(6, "Black");
-let pieza1 = piezaCreator.crearFichas(6, "Black");
-let pieza2 = piezaCreator.crearFichas(6, "Black");
+piezaCreator.setFichaOrientation(pieza0);
+piezaCreator.setFichaVecinos(pieza0);
 
-piezaCreator.setFichas(pieza0);
-piezaCreator.setFichas(pieza1);
-piezaCreator.setFichas(pieza2);
+piezaCreator.setFichaOrientation(pieza1);
+piezaCreator.setFichaVecinos(pieza1);
+
+piezaCreator.setFichaOrientation(pieza2);
+piezaCreator.setFichaVecinos(pieza2);
 
 console.log(pieza0);
 console.log(pieza1);
 console.log(pieza2);
+*/
 
 //TEST CASE 2: Ficha Insertion
-let ficha0: Ficha = new FichaTriangular("Red", true); 
-let ficha1: Ficha = new FichaTriangular("Red", false);
-let ficha2: Ficha = new FichaTriangular("Red", true);
-let ficha3: Ficha = new FichaTriangular("Red", false);
-let ficha4: Ficha = new FichaTriangular("Red", true);
-let ficha5: Ficha = new FichaTriangular("Red", false);
-let ficha6: Ficha = new FichaTriangular("Red", false);
-let ficha7: Ficha = new FichaTriangular("Yellow", false);
+let ficha0 = new FichaTriangular("Red", true); 
+let ficha1 = new FichaTriangular("Red", false);
+let ficha2 = new FichaTriangular("Red", true);
+let ficha3 = new FichaTriangular("Red", false);
+let ficha4 = new FichaTriangular("Red", true);
+let ficha5 = new FichaTriangular("Red", false);
+let ficha6 = new FichaTriangular("Red", false);
+let ficha7 = new FichaTriangular("Yellow", false);
 
 //Should all get inserted
 ficha0.insertar(tableroHexagonal[0]);
@@ -74,7 +80,7 @@ console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex, tableroHexagona
 
 //If a Hexagon is detected, the fichas are removed and the points are added
 if (hexagon.detectHexagon(hex, tableroHexagonal) == true){
-  points.addPoints(200,2);
+  points.addPoints(100,1);
 } 
 //console.log(tablero);
 console.log('Current Points: ' + points.puntaje);

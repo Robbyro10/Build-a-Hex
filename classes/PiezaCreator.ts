@@ -4,25 +4,29 @@ import { Colors } from "../CustomTypes/Colors";
 export class PiezaCreator {
       
       //Generates a random number of fichas of given color
-      crearFichas (shape: number, color: Colors): Ficha[]{
+      crearFichas (max: number, color: Colors): Ficha[]{
         var fichas: Ficha[] = [];
-        let max = shape;
         max = Math.floor(max);
         let n = Math.floor(Math.random() * (max - 1) + 1);
 
         for (let i = 0; i < n; i++){
           fichas.push(new Ficha(color));
+        }
+        return fichas;
+      }
+      
+      setFichaOrientation (fichas: FichaTriangular[]): void{
+        for (let i = 0; i < fichas.length; i++){
           if (i % 2 == 0){
             fichas[i].orientation = true;
           } else {
             fichas[i].orientation = false;
           }
         }
-        return fichas;
       }
 
       //Arranges a given number of fichas into a pieza
-      setFichas (fichas: FichaTriangular[]): void{
+      setFichaVecinos (fichas: FichaTriangular[]): void{
         let horizontal = 2;
         let vertical = 1;
         
