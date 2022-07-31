@@ -103,6 +103,9 @@ ficha7.insertar(tableroHexagonal[0]);
 //console.log("HEXAGON DETECTION: ");
 //we declare an array of id's to check for fichas of the same color
 let hex = [0,1,2,8,9,10];
+let hex1 = hexagon.getHexagonIds(tableroHexagonal[20], tableroHexagonal);
+//if hexagon requested doesnt exist, will return empty array
+console.log("Prueba Actual: " + hex1);
 console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex, tableroHexagonal));
 
 //console.log(tablero);

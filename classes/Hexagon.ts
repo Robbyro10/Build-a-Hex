@@ -58,5 +58,27 @@ export class Hexagon {
         }
         return ans;
     }
-    
+
+    getHexagonIds (casilla: CasillaTriangular, tablero: CasillaTriangular[]): number[] {
+      let ids: number[] = [];
+      ids.push(casilla.id);
+      let vecinoDerecha = casilla.vecinos.get("Derecha")?.id;
+      if (vecinoDerecha){
+        ids.push(vecinoDerecha);
+        ids.push(tablero[vecinoDerecha + 1].id);
+      }
+      else{
+        return ids = [];
+      }
+      let vecinoAbajo = casilla.vecinos.get("Abajo")?.id;
+      if (vecinoAbajo){
+        ids.push(vecinoAbajo);
+        ids.push(tablero[vecinoAbajo + 1].id);
+        ids.push(tablero[vecinoAbajo + 2].id);
+      }
+      else{
+        return ids = [];
+      }
+      return ids;
+    }
 }
