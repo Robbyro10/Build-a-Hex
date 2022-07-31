@@ -30,7 +30,7 @@ boardCreator.setTableroHexagonal(tableroHexagonal);
 //PIEZA GENERATION
 //will generate piezas of less than n
 //console.log("PIEZA CREATION:");
-let pieza0: FichaTriangular[] = piezaCreator.crearFichas(4, "Black");
+let pieza0: FichaTriangular[] = piezaCreator.crearFichas(6, "Black");
 let pieza1: FichaTriangular[] = piezaCreator.crearFichas(6, "Black");
 let pieza2: FichaTriangular[] = piezaCreator.crearFichas(6, "Black");
 
@@ -51,6 +51,7 @@ console.log(pieza2);
 
 
 //PIEZA ROTATION
+/*
 piezaHandler.rotate(pieza0);
 console.log("Pieza rotada: ");
 console.log(pieza0);
@@ -60,6 +61,7 @@ console.log(pieza0);
 piezaHandler.rotate(pieza0);
 console.log("Otra Rotacion: ");
 console.log(pieza0);
+*/
 
 
 // PIEZA VALIDATION
