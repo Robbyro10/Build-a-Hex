@@ -1,7 +1,6 @@
 //PROYECTO BUILD A HEX GAME
 //JUAN HEDDERICH
 
-import {Player} from './classes/Player';
 import { CasillaCreator } from './classes/CasillaCreator';
 import { Puntaje } from './classes/Puntaje';
 import { Casilla} from './classes/Casilla';
@@ -9,52 +8,72 @@ import { Ficha, FichaTriangular } from './classes/Ficha';
 import { Hexagon } from './classes/Hexagon';
 import { GameOver } from './classes/GameOver';
 import { PiezaCreator } from './classes/PiezaCreator';
-import { BoardGenerator } from './classes/BoardGenerator';
-import { PiezaInserter } from './classes/PiezaInserter';
+import { BoardCreator } from './classes/BoardCreator';
+import { PiezaHandler } from './classes/PiezaHandler';
 
 //Implementation
 let hexagon = new Hexagon;
-let boardGenerator = new BoardGenerator;
+let boardCreator = new BoardCreator;
 let piezaCreator = new PiezaCreator;
-let piezaInserter = new PiezaInserter;
+let piezaHandler = new PiezaHandler;
 let casillaCreator = new CasillaCreator;
 let gameOver = new GameOver;
 
+//BOARD CREATION
 //Refers to the specific board of 54 fichas and in the shape of a hexagon
+//console.log("BOARD CREATION:");
 let tableroHexagonal: Casilla[] = casillaCreator.crearCasillas(54);
+boardCreator.setCasillaOrientation(tableroHexagonal);
+boardCreator.setTableroHexagonal(tableroHexagonal);
+//console.log(tableroHexagonal);
 
-boardGenerator.setCasillaOrientation(tableroHexagonal);
-boardGenerator.setTableroHexagonal(tableroHexagonal);
-
-
-//Test Case 1: Pieza Generation
+//PIEZA GENERATION
 //will generate piezas of less than n
-let pieza0: Ficha[] = piezaCreator.crearFichas(4, "Black");
+//console.log("PIEZA CREATION:");
+let pieza0: FichaTriangular[] = piezaCreator.crearFichas(4, "Black");
 let pieza1: FichaTriangular[] = piezaCreator.crearFichas(6, "Black");
 let pieza2: FichaTriangular[] = piezaCreator.crearFichas(6, "Black");
 
 piezaCreator.setFichaOrientation(pieza0);
-piezaCreator.setFichaVecinos(pieza0);
+piezaCreator.setPieza(pieza0);
 
 piezaCreator.setFichaOrientation(pieza1);
-piezaCreator.setFichaVecinos(pieza1);
+piezaCreator.setPieza(pieza1);
 
 piezaCreator.setFichaOrientation(pieza2);
-piezaCreator.setFichaVecinos(pieza2);
+piezaCreator.setPieza(pieza2);
 
 console.log(pieza0);
+/*
 console.log(pieza1);
 console.log(pieza2);
+*/
 
-// Pieza Insertion
-if (piezaInserter.validarInsertion(pieza0, tableroHexagonal[16],tableroHexagonal)){
+
+//PIEZA ROTATION
+piezaHandler.rotate(pieza0);
+console.log("Pieza rotada: ");
+console.log(pieza0);
+piezaHandler.rotate(pieza0);
+console.log("Otra Rotacion: ");
+console.log(pieza0);
+piezaHandler.rotate(pieza0);
+console.log("Otra Rotacion: ");
+console.log(pieza0);
+
+
+// PIEZA VALIDATION
+/*console.log("PIEZA VALIDATION:");
+if (piezaHandler.validarInsertion(pieza0, tableroHexagonal[16],tableroHexagonal)){
   console.log("The ficha is insertable");
-  piezaInserter.insertarPieza(pieza0, tableroHexagonal[16],tableroHexagonal);
+  piezaHandler.insertarPieza(pieza0, tableroHexagonal[16],tableroHexagonal);
 } else {
   console.log("The ficha is NOT insertable");
 }
+*/
 
-//TEST CASE 2: Ficha Insertion
+//FICHA INSERTION
+//console.log("FICHA INSERTION:");
 let ficha0 = new FichaTriangular("Red", true); 
 let ficha1 = new FichaTriangular("Red", false);
 let ficha2 = new FichaTriangular("Red", true);
@@ -76,11 +95,11 @@ ficha5.insertar(tableroHexagonal[10]);
 ficha6.insertar(tableroHexagonal[11]);
 ficha7.insertar(tableroHexagonal[0]);
 
-console.log(tableroHexagonal);
+//console.log(tableroHexagonal);
 
-//TEST CASE 3: Hexagon Detection
+//TEST CASE 3: HEXAGON DETECTION
+//console.log("HEXAGON DETECTION: ");
 //we declare an array of id's to check for fichas of the same color
-
 let hex = [0,1,2,8,9,10];
 console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex, tableroHexagonal));
 

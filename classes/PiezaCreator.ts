@@ -27,7 +27,7 @@ export class PiezaCreator {
       }
 
       //Arranges a given number of fichas into a pieza
-      setFichaVecinos (fichas: FichaTriangular[]): void{
+      setPieza (fichas: FichaTriangular[]): void{
         let horizontal = 2;
         let vertical = 1;
         

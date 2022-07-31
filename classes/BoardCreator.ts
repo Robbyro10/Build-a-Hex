@@ -1,6 +1,6 @@
 import {CasillaTriangular, Casilla} from './Casilla';
 
- export class BoardGenerator {
+ export class BoardCreator {
 
   setCasillaOrientation(tablero: CasillaTriangular[]): void {
     //first row

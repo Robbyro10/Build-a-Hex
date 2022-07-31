@@ -35,6 +35,7 @@
         this.orientation = true;
       }
     }
+
   }
 
   export class FichaTriangular extends Ficha{
