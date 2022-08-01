@@ -45,11 +45,12 @@ piezaCreator.setPieza(pieza1);
 piezaCreator.setFichaOrientation(pieza2);
 piezaCreator.setPieza(pieza2);
 
-/*
 console.log(pieza0);
+/*
 console.log(pieza1);
 console.log(pieza2);
 */
+
 
 
 //PIEZA ROTATION
@@ -64,6 +65,7 @@ piezaHandler.rotate(pieza0);
 console.log("Otra Rotacion: ");
 console.log(pieza0);
 */
+
 
 
 // PIEZA VALIDATION

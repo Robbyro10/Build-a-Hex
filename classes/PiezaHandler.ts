@@ -33,6 +33,10 @@ export class PiezaHandler {
         }
     }
 
+    deletePieza (pieza: Ficha[]): void{
+      pieza = [];
+    }
+
     rotate(pieza: Ficha[]): void {
         for (let i = 0; i < pieza.length; i++){
           if (pieza[i].orientation){
