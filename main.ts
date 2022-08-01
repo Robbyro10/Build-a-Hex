@@ -2,7 +2,7 @@
 //JUAN HEDDERICH
 
 import { CasillaCreator } from './classes/CasillaCreator';
-import { Puntaje } from './classes/Puntaje';
+import { AddRule, Puntaje } from './classes/Puntaje';
 import { Casilla} from './classes/Casilla';
 import { Ficha, FichaTriangular } from './classes/Ficha';
 import { Hexagon } from './classes/Hexagon';
@@ -18,6 +18,8 @@ let piezaCreator = new PiezaCreator;
 let piezaHandler = new PiezaHandler;
 let casillaCreator = new CasillaCreator;
 let gameOver = new GameOver;
+let puntaje = new Puntaje(0);
+let regla = new AddRule;
 
 //BOARD CREATION
 //Refers to the specific board of 54 fichas and in the shape of a hexagon
@@ -43,8 +45,8 @@ piezaCreator.setPieza(pieza1);
 piezaCreator.setFichaOrientation(pieza2);
 piezaCreator.setPieza(pieza2);
 
-console.log(pieza0);
 /*
+console.log(pieza0);
 console.log(pieza1);
 console.log(pieza2);
 */
@@ -107,6 +109,11 @@ let hex1 = hexagon.getHexagonIds(tableroHexagonal[20], tableroHexagonal);
 //if hexagon requested doesnt exist, will return empty array
 console.log("Prueba Actual: " + hex1);
 console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex, tableroHexagonal));
+
+if (hexagon.detectHexagon(hex, tableroHexagonal)){
+  puntaje.changePoints(regla);
+  console.log(puntaje);
+}
 
 //console.log(tablero);
 console.log('Is the game over??: ' + gameOver.isGameOver(tableroHexagonal));
