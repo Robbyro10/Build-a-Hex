@@ -3,51 +3,30 @@ import { Ficha, FichaTriangular } from "./Ficha";
 
 export class PiezaHandler {
 
-    //Only works for piezas of 4 or less fichas
-    validarInsertion (fichas: Ficha[], casilla: Casilla, tablero: Casilla[]): boolean{
-        let n: number = casilla.id;
-  
-        //checks if the casilla exists and isn't ocuppied
-        for (let i = 0; i < fichas.length; i++){
-          if (i < 3){
-            if ((!tablero[n+i]) || (tablero[n+i].ficha)){
-              return false;
-            }
-          }
-          else if (i == 3){
-            if ((!tablero[n+i].vecinos.get("Abajo")?.id) || (tablero[n+i].vecinos.get("Abajo")?.ficha)){
-              return false;
-            }
-          }
-        }
-        return true;
-    }
-    
-    //Only works for piezas of 3 or less fichas
-    insertarPieza (fichas: Ficha[], casilla: Casilla, tablero: Casilla[]): void{
-        let n: number = casilla.id;
-        for (let i = 0; i < fichas.length; i++){
-          if (i < 3){
-            fichas[i].insertar(tablero[n+i]);
-          }
-        }
-    }
-
-    insertarPieza2 (pieza: FichaTriangular[], position: number, hexagon: number[], tablero: Casilla[]):void {
-      
+    insertarPieza(pieza: FichaTriangular[], position: number, hexagon: number[], tablero: Casilla[]):void {
+      //array of valid casilla.ids for insertion
+      let ids: number[] = [];
+      //first we validate the insertion
       for (let i = 0; i < pieza.length; i++){
-        if (position == pieza.length-1){ //aqui hay algo raro
+        if (position == 6){ 
           position = 0;
         }
-
+        
         if (tablero[hexagon[position]].ficha){
           console.log("Insertion Failed");
           return;
         }
-        tablero[hexagon[position]].ficha = pieza[i];
+        else{
+          ids.push(hexagon[position])
+          //helps with testing
+          console.log(hexagon[position]);
+        }
         position++
       }
-
+      //We insert the fichas
+      for (let i = 0; i < ids.length; i++){
+        tablero[ids[i]].ficha = pieza[i];
+      }
     }
 
     deletePieza (pieza: Ficha[]): void{

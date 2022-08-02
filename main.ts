@@ -66,18 +66,6 @@ console.log("Otra Rotacion: ");
 console.log(pieza0);
 */
 
-
-
-// PIEZA VALIDATION
-/*console.log("PIEZA VALIDATION:");
-if (piezaHandler.validarInsertion(pieza0, tableroHexagonal[16],tableroHexagonal)){
-  console.log("The ficha is insertable");
-  piezaHandler.insertarPieza(pieza0, tableroHexagonal[16],tableroHexagonal);
-} else {
-  console.log("The ficha is NOT insertable");
-}
-*/
-
 //FICHA INSERTION
 //console.log("FICHA INSERTION:");
 /*
@@ -105,9 +93,12 @@ ficha6.insertar(tableroHexagonal[11]);
 ficha7.insertar(tableroHexagonal[0]);
 */
 
+//PIEZA INSERTION
+let ficha0 = new FichaTriangular("Red", true); 
+ficha0.insertar(tableroHexagonal[0]);
 let hex1 = hexagon.getHexagonIds(tableroHexagonal[0], tableroHexagonal);
 let hex = [0,1,2,8,9,10];
-piezaHandler.insertarPieza2(pieza0,3,hex1,tableroHexagonal);
+piezaHandler.insertarPieza(pieza0,0,hex1,tableroHexagonal);
 console.log(tableroHexagonal);
 
 //TEST CASE 3: HEXAGON DETECTION
