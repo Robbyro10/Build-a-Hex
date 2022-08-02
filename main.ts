@@ -80,6 +80,7 @@ if (piezaHandler.validarInsertion(pieza0, tableroHexagonal[16],tableroHexagonal)
 
 //FICHA INSERTION
 //console.log("FICHA INSERTION:");
+/*
 let ficha0 = new FichaTriangular("Red", true); 
 let ficha1 = new FichaTriangular("Red", false);
 let ficha2 = new FichaTriangular("Red", true);
@@ -88,8 +89,10 @@ let ficha4 = new FichaTriangular("Red", true);
 let ficha5 = new FichaTriangular("Red", false);
 let ficha6 = new FichaTriangular("Red", false);
 let ficha7 = new FichaTriangular("Yellow", false);
+*/
 
 //Should all get inserted
+/*
 ficha0.insertar(tableroHexagonal[0]);
 ficha1.insertar(tableroHexagonal[1]);
 ficha2.insertar(tableroHexagonal[2]);
@@ -100,14 +103,16 @@ ficha5.insertar(tableroHexagonal[10]);
 //Should not get inserted
 ficha6.insertar(tableroHexagonal[11]);
 ficha7.insertar(tableroHexagonal[0]);
+*/
 
-//console.log(tableroHexagonal);
+let hex1 = hexagon.getHexagonIds(tableroHexagonal[0], tableroHexagonal);
+let hex = [0,1,2,8,9,10];
+piezaHandler.insertarPieza2(pieza0,3,hex1,tableroHexagonal);
+console.log(tableroHexagonal);
 
 //TEST CASE 3: HEXAGON DETECTION
 //console.log("HEXAGON DETECTION: ");
 //we declare an array of id's to check for fichas of the same color
-let hex = [0,1,2,8,9,10];
-let hex1 = hexagon.getHexagonIds(tableroHexagonal[20], tableroHexagonal);
 //if hexagon requested doesnt exist, will return empty array
 console.log("Prueba Actual: " + hex1);
 console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex, tableroHexagonal));

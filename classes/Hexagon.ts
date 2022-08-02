@@ -72,9 +72,9 @@ export class Hexagon {
       }
       let vecinoAbajo = casilla.vecinos.get("Abajo")?.id;
       if (vecinoAbajo){
-        ids.push(vecinoAbajo);
-        ids.push(tablero[vecinoAbajo + 1].id);
         ids.push(tablero[vecinoAbajo + 2].id);
+        ids.push(tablero[vecinoAbajo + 1].id);
+        ids.push(vecinoAbajo);
       }
       else{
         return ids = [];

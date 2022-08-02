@@ -1,5 +1,5 @@
 import { Casilla } from "./Casilla";
-import { Ficha } from "./Ficha";
+import { Ficha, FichaTriangular } from "./Ficha";
 
 export class PiezaHandler {
 
@@ -31,6 +31,23 @@ export class PiezaHandler {
             fichas[i].insertar(tablero[n+i]);
           }
         }
+    }
+
+    insertarPieza2 (pieza: FichaTriangular[], position: number, hexagon: number[], tablero: Casilla[]):void {
+      
+      for (let i = 0; i < pieza.length; i++){
+        if (position == pieza.length-1){ //aqui hay algo raro
+          position = 0;
+        }
+
+        if (tablero[hexagon[position]].ficha){
+          console.log("Insertion Failed");
+          return;
+        }
+        tablero[hexagon[position]].ficha = pieza[i];
+        position++
+      }
+
     }
 
     deletePieza (pieza: Ficha[]): void{
