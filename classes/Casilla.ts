@@ -1,14 +1,14 @@
 
 import { directions } from "../CustomTypes/Directions";
-import { Ficha, FichaTriangular } from "./Ficha";
+import { Ficha} from "./Ficha";
 import { Nodo } from "./Nodo";
 
-export class Casilla extends Nodo <directions, Casilla> {
-    ficha?: Ficha;
+export class Casilla<D> extends Nodo <D, Casilla<D>> {
+    ficha?: Ficha<D>;
     id: number;
     orientation?: boolean;
     
-    constructor (id:number, orientation?: boolean, ficha?: Ficha){
+    constructor (id:number, orientation?: boolean, ficha?: Ficha<D>){
       super();
       this.id = id;
       this.orientation = orientation;
@@ -20,6 +20,6 @@ export class Casilla extends Nodo <directions, Casilla> {
     }
   }
 
-  export class CasillaTriangular extends Casilla {
+  export class CasillaTriangular extends Casilla<directions> {
     
   }

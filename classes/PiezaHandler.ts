@@ -1,9 +1,9 @@
-import { Casilla } from "./Casilla";
+import { Casilla, CasillaTriangular } from "./Casilla";
 import { Ficha, FichaTriangular } from "./Ficha";
 
-export class PiezaHandler {
+export class PiezaHandler<D> {
 
-    insertarPieza(pieza: FichaTriangular[], position: number, hexagon: number[], tablero: Casilla[]):void {
+    insertarPieza(pieza: FichaTriangular[], position: number, hexagon: number[], tablero: CasillaTriangular[]):void {
       //array of valid casilla.ids for insertion
       let ids: number[] = [];
       //first we validate the insertion
@@ -31,11 +31,11 @@ export class PiezaHandler {
       console.log(); //Better readability 
     }
 
-    deletePieza (pieza: Ficha[]): void{
+    deletePieza (pieza: Ficha<D>[]): void{
       pieza = [];
     }
 
-    rotate(pieza: Ficha[]): void {
+    rotate(pieza: FichaTriangular[]): void {
         for (let i = 0; i < pieza.length; i++){
           if (pieza[i].orientation){
             if (pieza[i].vecinos.has("Izquierda")){

@@ -7,17 +7,19 @@ import { Casilla, CasillaTriangular} from './classes/Casilla';
 import { Ficha, FichaTriangular } from './classes/Ficha';
 import { Hexagon } from './classes/Hexagon';
 import { GameOver } from './classes/GameOver';
-import { PiezaCreator } from './classes/PiezaCreator';
+import { FichaCreator} from './classes/FichaCreator';
 import { BoardCreator } from './classes/BoardCreator';
 import { PiezaHandler } from './classes/PiezaHandler';
 import { directions } from './CustomTypes/Directions';
+import { PiezaCreator } from './classes/PizaCreator';
 
 //Implementation
 let hexagon = new Hexagon;
 let boardCreator = new BoardCreator;
 let piezaCreator = new PiezaCreator;
+let fichaCreator = new FichaCreator<directions>;
 let piezaHandler = new PiezaHandler;
-let casillaCreator = new CasillaCreator;
+let casillaCreator = new CasillaCreator<directions>;
 let gameOver = new GameOver;
 let puntaje = new Puntaje(0);
 let regla = new AddRule;
@@ -31,9 +33,9 @@ boardCreator.getTableroHexagonal(tableroHexagonal);
 //PIEZA GENERATION(Random)
 //Will generate piezas of less than n fichas
 
-let pieza0: FichaTriangular[] = piezaCreator.crearFichasRandom(6, "Black");
-let pieza1: FichaTriangular[] = piezaCreator.crearFichasRandom(6, "Black");
-let pieza2: FichaTriangular[] = piezaCreator.crearFichasRandom(6, "Black");
+let pieza0: FichaTriangular[] = fichaCreator.crearFichasRandom(6, "Black");
+let pieza1: FichaTriangular[] = fichaCreator.crearFichasRandom(6, "Black");
+let pieza2: FichaTriangular[] = fichaCreator.crearFichasRandom(6, "Black");
 
 piezaCreator.getPieza(pieza0);
 
@@ -54,10 +56,11 @@ console.log(pieza2);
 ////PIEZA GENERATION(Manual)
 //Will generate piezas of n fichas
 
-let piezaManual: FichaTriangular[] = piezaCreator.crearFichasManual(4, "Green");
-let piezaManual1: FichaTriangular[] = piezaCreator.crearFichasManual(2, "Green");
-let piezaManual2: FichaTriangular[] = piezaCreator.crearFichasManual(3, "Blue");
+let piezaManual: FichaTriangular[] = fichaCreator.crearFichasManual(4, "Green");
+let piezaManual1: FichaTriangular[] = fichaCreator.crearFichasManual(2, "Green");
+let piezaManual2: FichaTriangular[] = fichaCreator.crearFichasManual(3, "Blue");
 
+/*
 console.log("piezas manuales");
 piezaCreator.getPieza(piezaManual);
 console.log(piezaManual);
@@ -65,6 +68,7 @@ piezaCreator.getPieza(piezaManual1);
 console.log(piezaManual1);
 piezaCreator.getPieza(piezaManual2);
 console.log(piezaManual2);
+*/
 
 //PIEZA INSERTION 
 
@@ -78,9 +82,9 @@ let hex20 = hexagon.getHexagonIds(tableroHexagonal[20], tableroHexagonal);
 let hex32 = hexagon.getHexagonIds(tableroHexagonal[32], tableroHexagonal);
 let hex30 = hexagon.getHexagonIds(tableroHexagonal[30], tableroHexagonal);
 
-let piezaManual3: FichaTriangular[] = piezaCreator.crearFichasManual(3,"Black");
-let piezaManual4: FichaTriangular[] = piezaCreator.crearFichasManual(2,"Black");
-let piezaManual5: FichaTriangular[] = piezaCreator.crearFichasManual(4,"Black");
+let piezaManual3: FichaTriangular[] = fichaCreator.crearFichasManual(3,"Black");
+let piezaManual4: FichaTriangular[] = fichaCreator.crearFichasManual(2,"Black");
+let piezaManual5: FichaTriangular[] = fichaCreator.crearFichasManual(4,"Black");
 
 piezaHandler.insertarPieza(piezaManual3,0,hex20,tableroHexagonal);
 piezaHandler.insertarPieza(piezaManual4,1,hex32,tableroHexagonal);
@@ -95,7 +99,7 @@ console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex1, tableroHexagon
 console.log("Prueba 2: " + hex20);
 console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex20, tableroHexagonal));
 console.log(tableroHexagonal);
-/*
+
 if (hexagon.detectHexagon(hex20, tableroHexagonal)){
   puntaje.changePoints(regla);
   console.log(puntaje);
@@ -116,9 +120,8 @@ console.log(pieza0);
 */
 
 //FICHA INSERTION
-let ficha0 = new FichaTriangular("Pink", true); 
-/*
-let ficha1 = new FichaTriangular("White", false);
+let ficha0 = new Ficha("Pink", true); 
+let ficha1 = new Ficha("White", false);
 let ficha2 = new FichaTriangular("Black", true);
 let ficha6 = new FichaTriangular("Red", false);
 let ficha7 = new FichaTriangular("Yellow", false);
@@ -132,10 +135,7 @@ ficha2.insertar(tableroHexagonal[2]);
 ficha6.insertar(tableroHexagonal[2]);
 ficha7.insertar(tableroHexagonal[0]);
 
-console.log(tableroHexagonal);
-*/
-
-
+//console.log(tableroHexagonal);
 
 //CHECK FOR GAME OVER 
 //console.log('Is the game over??: ' + gameOver.isGameOver(tableroHexagonal));

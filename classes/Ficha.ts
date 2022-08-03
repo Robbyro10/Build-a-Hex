@@ -1,9 +1,9 @@
   import { Nodo } from "./Nodo";
-  import { Casilla } from "./Casilla";
+  import { Casilla, CasillaTriangular } from "./Casilla";
   import { Colors } from "../CustomTypes/Colors";
   import { directions } from "../CustomTypes/Directions";
 
-  export class Ficha extends Nodo <directions, Ficha>{
+  export class Ficha<D> extends Nodo <D, Ficha<D>>{
     color: Colors;
     orientation?: boolean;
 
@@ -12,21 +12,12 @@
       this.color = color;
       this.orientation = orientation;
     } 
-
-    //Only for singular fichas
-    insertar (casilla:Casilla): void{
-      if (!casilla.ficha){
-        if (casilla.orientation == this.orientation){
-          casilla.ficha = this;
-        }else {
-          console.log("Ficha insertion failed due to incompatible Ficha and Casilla orientation.");
-        }
-      }else{
-        console.log("Ficha insertion failed due to Casilla begin ocuppied.");
-      }
+    
+    insertar(casilla: Casilla<D>): void{
+      casilla.ficha = this;
     }
 
-    //Only works for singular fichas
+    //For singular fichas
     flip(): void{
       if (this.orientation){
         this.orientation = false;
@@ -35,10 +26,9 @@
         this.orientation = true;
       }
     }
-
   }
+  
+  export class FichaTriangular extends Ficha<directions>{
 
-  export class FichaTriangular extends Ficha{
-    
 
   }

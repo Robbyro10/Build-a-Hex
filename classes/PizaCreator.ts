@@ -3,26 +3,6 @@ import { Colors } from "../CustomTypes/Colors";
 
 export class PiezaCreator {
 
-      //Generates a random number of fichas of given color
-      crearFichasRandom (max: number, color: Colors): Ficha[]{
-        var fichas: Ficha[] = [];
-        max = Math.floor(max);
-        let n = Math.floor(Math.random() * (max - 1) + 1);
-
-        for (let i = 0; i < n; i++){
-          fichas.push(new Ficha(color));
-        }
-        return fichas;
-      }
-
-      crearFichasManual (n: number, color: Colors): Ficha[]{
-        var fichas: Ficha[] = [];
-        for (let i = 0; i < n; i++){
-          fichas.push(new Ficha(color));
-        }
-        return fichas;
-      }
-
       getPieza(fichas: FichaTriangular[]): void{
         this.setFichaOrientation(fichas);
       }
