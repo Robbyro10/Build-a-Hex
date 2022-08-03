@@ -1,6 +1,5 @@
 import { Ficha, FichaTriangular } from "./Ficha";
 import { Colors } from "../CustomTypes/Colors";
-import { Casilla } from "./Casilla";
 
 export class PiezaCreator {
       
@@ -10,6 +9,14 @@ export class PiezaCreator {
         max = Math.floor(max);
         let n = Math.floor(Math.random() * (max - 1) + 1);
 
+        for (let i = 0; i < n; i++){
+          fichas.push(new Ficha(color));
+        }
+        return fichas;
+      }
+
+      crearFichasManual (n: number, color: Colors): Ficha[]{
+        var fichas: Ficha[] = [];
         for (let i = 0; i < n; i++){
           fichas.push(new Ficha(color));
         }

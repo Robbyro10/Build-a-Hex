@@ -3,7 +3,7 @@
 
 import { CasillaCreator } from './classes/CasillaCreator';
 import { AddRule, Puntaje } from './classes/Puntaje';
-import { Casilla} from './classes/Casilla';
+import { Casilla, CasillaTriangular} from './classes/Casilla';
 import { Ficha, FichaTriangular } from './classes/Ficha';
 import { Hexagon } from './classes/Hexagon';
 import { GameOver } from './classes/GameOver';
@@ -23,15 +23,14 @@ let regla = new AddRule;
 
 //BOARD CREATION
 //Refers to the specific board of 54 fichas and in the shape of a hexagon
-//console.log("BOARD CREATION:");
-let tableroHexagonal: Casilla[] = casillaCreator.crearCasillas(54);
+let tableroHexagonal: CasillaTriangular[] = casillaCreator.crearCasillas(54);
 boardCreator.setCasillaOrientation(tableroHexagonal);
 boardCreator.setTableroHexagonal(tableroHexagonal);
 //console.log(tableroHexagonal);
 
-//PIEZA GENERATION
-//will generate piezas of less than n
-//console.log("PIEZA CREATION:");
+//PIEZA GENERATION(Random)
+//Will generate piezas of less than n fichas
+
 let pieza0: FichaTriangular[] = piezaCreator.crearFichas(6, "Black");
 let pieza1: FichaTriangular[] = piezaCreator.crearFichas(6, "Black");
 let pieza2: FichaTriangular[] = piezaCreator.crearFichas(6, "Black");
@@ -45,13 +44,24 @@ piezaCreator.setPieza(pieza1);
 piezaCreator.setFichaOrientation(pieza2);
 piezaCreator.setPieza(pieza2);
 
-console.log(pieza0);
 /*
+console.log("Pieza0:");
+console.log(pieza0);
+console.log("Pieza1:");
 console.log(pieza1);
+console.log("Pieza2:");
 console.log(pieza2);
 */
 
+////PIEZA GENERATION(Manual)
+//Will generate piezas of n fichas
+/*
+let piezaManual: FichaTriangular[] = piezaCreator.crearFichasManual(1, "Black");
 
+piezaCreator.setFichaOrientation(piezaManual);
+piezaCreator.setPieza(piezaManual);
+console.log(piezaManual);
+*/
 
 //PIEZA ROTATION
 /*
@@ -67,44 +77,39 @@ console.log(pieza0);
 */
 
 //FICHA INSERTION
-//console.log("FICHA INSERTION:");
+let ficha0 = new FichaTriangular("Pink", true); 
 /*
-let ficha0 = new FichaTriangular("Red", true); 
-let ficha1 = new FichaTriangular("Red", false);
-let ficha2 = new FichaTriangular("Red", true);
-let ficha3 = new FichaTriangular("Red", false);
-let ficha4 = new FichaTriangular("Red", true);
-let ficha5 = new FichaTriangular("Red", false);
+let ficha1 = new FichaTriangular("White", false);
+let ficha2 = new FichaTriangular("Black", true);
 let ficha6 = new FichaTriangular("Red", false);
 let ficha7 = new FichaTriangular("Yellow", false);
-*/
 
 //Should all get inserted
-/*
 ficha0.insertar(tableroHexagonal[0]);
 ficha1.insertar(tableroHexagonal[1]);
 ficha2.insertar(tableroHexagonal[2]);
-ficha3.insertar(tableroHexagonal[8]);
-ficha4.insertar(tableroHexagonal[9]);
-ficha5.insertar(tableroHexagonal[10]);
 
 //Should not get inserted
-ficha6.insertar(tableroHexagonal[11]);
+ficha6.insertar(tableroHexagonal[2]);
 ficha7.insertar(tableroHexagonal[0]);
+
+console.log(tableroHexagonal);
 */
 
-//PIEZA INSERTION
-let ficha0 = new FichaTriangular("Red", true); 
-ficha0.insertar(tableroHexagonal[0]);
+//PIEZA INSERTION 
+
+//ficha0.insertar(tableroHexagonal[0]);
 let hex1 = hexagon.getHexagonIds(tableroHexagonal[0], tableroHexagonal);
 let hex = [0,1,2,8,9,10];
 piezaHandler.insertarPieza(pieza0,0,hex1,tableroHexagonal);
-console.log(tableroHexagonal);
+//console.log(tableroHexagonal);
+
+
 
 //TEST CASE 3: HEXAGON DETECTION
-//console.log("HEXAGON DETECTION: ");
 //we declare an array of id's to check for fichas of the same color
 //if hexagon requested doesnt exist, will return empty array
+/*
 console.log("Prueba Actual: " + hex1);
 console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex, tableroHexagonal));
 
@@ -112,8 +117,10 @@ if (hexagon.detectHexagon(hex, tableroHexagonal)){
   puntaje.changePoints(regla);
   console.log(puntaje);
 }
-
 //console.log(tablero);
-console.log('Is the game over??: ' + gameOver.isGameOver(tableroHexagonal));
+*/
+
+//CHECK FOR GAME OVER 
+//console.log('Is the game over??: ' + gameOver.isGameOver(tableroHexagonal));
 
 

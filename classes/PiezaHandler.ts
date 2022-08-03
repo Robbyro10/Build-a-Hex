@@ -86,7 +86,11 @@ export class PiezaHandler {
               else{ 
                 //solo un vecino
                 pieza[i].vecinos.delete("Derecha");
-                pieza[i].vecinos.set("Abajo", pieza[i+1]);
+                if (pieza[i-1]){
+                  pieza[i].vecinos.set("Abajo", pieza[i-1]);
+                }else{
+                  pieza[i].vecinos.set("Abajo", pieza[i+1]);
+                }
               }
             }
             else if (pieza[i].vecinos.has("Arriba")){
