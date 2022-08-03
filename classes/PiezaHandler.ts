@@ -1,7 +1,7 @@
 import { Casilla, CasillaTriangular } from "./Casilla";
 import { Ficha, FichaTriangular } from "./Ficha";
 
-export class PiezaHandler<D> {
+export class PiezaHandler {
 
     insertarPieza(pieza: FichaTriangular[], position: number, hexagon: number[], tablero: CasillaTriangular[]):void {
       //array of valid casilla.ids for insertion
@@ -31,7 +31,7 @@ export class PiezaHandler<D> {
       console.log(); //Better readability 
     }
 
-    deletePieza (pieza: Ficha<D>[]): void{
+    deletePieza (pieza: FichaTriangular[]): void{
       pieza = [];
     }
 

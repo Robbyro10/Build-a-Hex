@@ -60,7 +60,7 @@ let piezaManual: FichaTriangular[] = fichaCreator.crearFichasManual(4, "Green");
 let piezaManual1: FichaTriangular[] = fichaCreator.crearFichasManual(2, "Green");
 let piezaManual2: FichaTriangular[] = fichaCreator.crearFichasManual(3, "Blue");
 
-/*
+
 console.log("piezas manuales");
 piezaCreator.getPieza(piezaManual);
 console.log(piezaManual);
@@ -68,7 +68,7 @@ piezaCreator.getPieza(piezaManual1);
 console.log(piezaManual1);
 piezaCreator.getPieza(piezaManual2);
 console.log(piezaManual2);
-*/
+
 
 //PIEZA INSERTION 
 
@@ -98,7 +98,7 @@ console.log("Prueba 1: " + hex1);
 console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex1, tableroHexagonal));
 console.log("Prueba 2: " + hex20);
 console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex20, tableroHexagonal));
-console.log(tableroHexagonal);
+//console.log(tableroHexagonal);
 
 if (hexagon.detectHexagon(hex20, tableroHexagonal)){
   puntaje.changePoints(regla);
