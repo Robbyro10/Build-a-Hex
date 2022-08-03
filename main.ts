@@ -10,6 +10,7 @@ import { GameOver } from './classes/GameOver';
 import { PiezaCreator } from './classes/PiezaCreator';
 import { BoardCreator } from './classes/BoardCreator';
 import { PiezaHandler } from './classes/PiezaHandler';
+import { directions } from './CustomTypes/Directions';
 
 //Implementation
 let hexagon = new Hexagon;
@@ -24,25 +25,22 @@ let regla = new AddRule;
 //BOARD CREATION
 //Refers to the specific board of 54 fichas and in the shape of a hexagon
 let tableroHexagonal: CasillaTriangular[] = casillaCreator.crearCasillas(54);
-boardCreator.setCasillaOrientation(tableroHexagonal);
-boardCreator.setTableroHexagonal(tableroHexagonal);
+boardCreator.getTableroHexagonal(tableroHexagonal);
 //console.log(tableroHexagonal);
 
 //PIEZA GENERATION(Random)
 //Will generate piezas of less than n fichas
 
-let pieza0: FichaTriangular[] = piezaCreator.crearFichas(6, "Black");
-let pieza1: FichaTriangular[] = piezaCreator.crearFichas(6, "Black");
-let pieza2: FichaTriangular[] = piezaCreator.crearFichas(6, "Black");
+let pieza0: FichaTriangular[] = piezaCreator.crearFichasRandom(6, "Black");
+let pieza1: FichaTriangular[] = piezaCreator.crearFichasRandom(6, "Black");
+let pieza2: FichaTriangular[] = piezaCreator.crearFichasRandom(6, "Black");
 
-piezaCreator.setFichaOrientation(pieza0);
-piezaCreator.setPieza(pieza0);
+piezaCreator.getPieza(pieza0);
 
-piezaCreator.setFichaOrientation(pieza1);
-piezaCreator.setPieza(pieza1);
+piezaCreator.getPieza(pieza1);
 
-piezaCreator.setFichaOrientation(pieza2);
-piezaCreator.setPieza(pieza2);
+piezaCreator.getPieza(pieza2);
+//console.log(pieza0);
 
 /*
 console.log("Pieza0:");
@@ -55,13 +53,28 @@ console.log(pieza2);
 
 ////PIEZA GENERATION(Manual)
 //Will generate piezas of n fichas
-/*
-let piezaManual: FichaTriangular[] = piezaCreator.crearFichasManual(1, "Black");
 
-piezaCreator.setFichaOrientation(piezaManual);
-piezaCreator.setPieza(piezaManual);
+let piezaManual: FichaTriangular[] = piezaCreator.crearFichasManual(4, "Green");
+let piezaManual1: FichaTriangular[] = piezaCreator.crearFichasManual(2, "Yellow");
+let piezaManual2: FichaTriangular[] = piezaCreator.crearFichasManual(3, "Blue");
+
+console.log("piezas manuales");
+piezaCreator.getPieza(piezaManual);
 console.log(piezaManual);
-*/
+piezaCreator.getPieza(piezaManual1);
+console.log(piezaManual1);
+piezaCreator.getPieza(piezaManual2);
+console.log(piezaManual2);
+
+//PIEZA INSERTION 
+
+let hex1 = hexagon.getHexagonIds(tableroHexagonal[0], tableroHexagonal);
+piezaHandler.insertarPieza(piezaManual,4,hex1,tableroHexagonal);
+//Should not get inserted
+//piezaHandler.insertarPieza(piezaManual2,2,hex1,tableroHexagonal);
+piezaHandler.insertarPieza(piezaManual1,2,hex1,tableroHexagonal);
+
+//console.log(tableroHexagonal);
 
 //PIEZA ROTATION
 /*
@@ -96,13 +109,6 @@ ficha7.insertar(tableroHexagonal[0]);
 console.log(tableroHexagonal);
 */
 
-//PIEZA INSERTION 
-
-//ficha0.insertar(tableroHexagonal[0]);
-let hex1 = hexagon.getHexagonIds(tableroHexagonal[0], tableroHexagonal);
-let hex = [0,1,2,8,9,10];
-piezaHandler.insertarPieza(pieza0,0,hex1,tableroHexagonal);
-//console.log(tableroHexagonal);
 
 
 
@@ -111,9 +117,9 @@ piezaHandler.insertarPieza(pieza0,0,hex1,tableroHexagonal);
 //if hexagon requested doesnt exist, will return empty array
 /*
 console.log("Prueba Actual: " + hex1);
-console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex, tableroHexagonal));
+console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex1, tableroHexagonal));
 
-if (hexagon.detectHexagon(hex, tableroHexagonal)){
+if (hexagon.detectHexagon(hex1, tableroHexagonal)){
   puntaje.changePoints(regla);
   console.log(puntaje);
 }
