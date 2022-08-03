@@ -16,7 +16,7 @@ export class Casilla extends Nodo <directions, Casilla> {
     }
     
     removeFicha (): void{
-      delete this.ficha;
+      this.ficha = undefined;
     }
   }
 

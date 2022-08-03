@@ -55,7 +55,7 @@ console.log(pieza2);
 //Will generate piezas of n fichas
 
 let piezaManual: FichaTriangular[] = piezaCreator.crearFichasManual(4, "Green");
-let piezaManual1: FichaTriangular[] = piezaCreator.crearFichasManual(2, "Yellow");
+let piezaManual1: FichaTriangular[] = piezaCreator.crearFichasManual(2, "Green");
 let piezaManual2: FichaTriangular[] = piezaCreator.crearFichasManual(3, "Blue");
 
 console.log("piezas manuales");
@@ -70,11 +70,37 @@ console.log(piezaManual2);
 
 let hex1 = hexagon.getHexagonIds(tableroHexagonal[0], tableroHexagonal);
 piezaHandler.insertarPieza(piezaManual,4,hex1,tableroHexagonal);
-//Should not get inserted
-//piezaHandler.insertarPieza(piezaManual2,2,hex1,tableroHexagonal);
 piezaHandler.insertarPieza(piezaManual1,2,hex1,tableroHexagonal);
 
-//console.log(tableroHexagonal);
+//Should not get inserted
+//piezaHandler.insertarPieza(piezaManual2,2,hex1,tableroHexagonal);
+let hex20 = hexagon.getHexagonIds(tableroHexagonal[20], tableroHexagonal);
+let hex32 = hexagon.getHexagonIds(tableroHexagonal[32], tableroHexagonal);
+let hex30 = hexagon.getHexagonIds(tableroHexagonal[30], tableroHexagonal);
+
+let piezaManual3: FichaTriangular[] = piezaCreator.crearFichasManual(3,"Black");
+let piezaManual4: FichaTriangular[] = piezaCreator.crearFichasManual(2,"Black");
+let piezaManual5: FichaTriangular[] = piezaCreator.crearFichasManual(4,"Black");
+
+piezaHandler.insertarPieza(piezaManual3,0,hex20,tableroHexagonal);
+piezaHandler.insertarPieza(piezaManual4,1,hex32,tableroHexagonal);
+piezaHandler.insertarPieza(piezaManual5,1,hex30,tableroHexagonal);
+
+//HEXAGON DETECTION
+//we declare an array of id's to check for fichas of the same color
+//if hexagon requested doesnt exist, will return empty array
+
+console.log("Prueba 1: " + hex1);
+console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex1, tableroHexagonal));
+console.log("Prueba 2: " + hex20);
+console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex20, tableroHexagonal));
+console.log(tableroHexagonal);
+/*
+if (hexagon.detectHexagon(hex20, tableroHexagonal)){
+  puntaje.changePoints(regla);
+  console.log(puntaje);
+}
+//console.log(tablero);
 
 //PIEZA ROTATION
 /*
@@ -110,21 +136,6 @@ console.log(tableroHexagonal);
 */
 
 
-
-
-//TEST CASE 3: HEXAGON DETECTION
-//we declare an array of id's to check for fichas of the same color
-//if hexagon requested doesnt exist, will return empty array
-/*
-console.log("Prueba Actual: " + hex1);
-console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex1, tableroHexagonal));
-
-if (hexagon.detectHexagon(hex1, tableroHexagonal)){
-  puntaje.changePoints(regla);
-  console.log(puntaje);
-}
-//console.log(tablero);
-*/
 
 //CHECK FOR GAME OVER 
 //console.log('Is the game over??: ' + gameOver.isGameOver(tableroHexagonal));

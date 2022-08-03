@@ -26,7 +26,9 @@ export class PiezaHandler {
       //We insert the fichas
       for (let i = 0; i < ids.length; i++){
         tablero[ids[i]].ficha = pieza[i];
+        pieza[i].orientation = tablero[ids[i]].orientation;
       }
+      console.log(); //Better readability 
     }
 
     deletePieza (pieza: Ficha[]): void{
