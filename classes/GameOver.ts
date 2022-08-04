@@ -1,10 +1,9 @@
-import { Casilla } from "./Casilla";
+import { CasillaTriangular } from "./Casilla";
 
-export class GameOver<D> {
+export class GameOver {
 
     // Checks for casillas with no fichas in it
-    
-    isGameOver (tablero: Casilla<D>[]): boolean{
+    isGameOver (tablero: CasillaTriangular[]): boolean{
         let resp: boolean = false;
         for (var casilla of tablero){
           if (!casilla.ficha){
@@ -14,6 +13,16 @@ export class GameOver<D> {
         return true;
       }
 
-    
-
+    /*
+    isGameOver2 (piezas: Piezas[], tablero: CasillaTriangular[]): boolean{
+      for (let casilla of tablero){
+        if (!casilla.ficha){
+          check if insertable{
+            if (insertable){return false}
+          }
+        }
+      }
+      return true;
+    }
+    */
 }

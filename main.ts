@@ -72,9 +72,9 @@ console.log(piezaManual2);
 
 //PIEZA INSERTION 
 
-let hex1 = hexagon.getHexagonIds(tableroHexagonal[0], tableroHexagonal);
-piezaHandler.insertarPieza(piezaManual,4,hex1,tableroHexagonal);
-piezaHandler.insertarPieza(piezaManual1,2,hex1,tableroHexagonal);
+let hex0 = hexagon.getHexagonIds(tableroHexagonal[0], tableroHexagonal);
+piezaHandler.insertarPieza(piezaManual,4,hex0,tableroHexagonal);
+piezaHandler.insertarPieza(piezaManual1,2,hex0,tableroHexagonal);
 
 //Should not get inserted
 //piezaHandler.insertarPieza(piezaManual2,2,hex1,tableroHexagonal);
@@ -94,13 +94,17 @@ piezaHandler.insertarPieza(piezaManual5,1,hex30,tableroHexagonal);
 //we declare an array of id's to check for fichas of the same color
 //if hexagon requested doesnt exist, will return empty array
 
-console.log("Prueba 1: " + hex1);
-console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex1, tableroHexagonal));
+console.log("Prueba 1: " + hex0);
+console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex0, tableroHexagonal));
 console.log("Prueba 2: " + hex20);
 console.log('Is there a Hexagon?: ' + hexagon.detectHexagon(hex20, tableroHexagonal));
 //console.log(tableroHexagonal);
 
 if (hexagon.detectHexagon(hex20, tableroHexagonal)){
+  puntaje.changePoints(regla);
+  console.log(puntaje);
+}
+if (hexagon.detectHexagon(hex0, tableroHexagonal)){
   puntaje.changePoints(regla);
   console.log(puntaje);
 }

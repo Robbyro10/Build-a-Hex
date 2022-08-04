@@ -1,4 +1,4 @@
-import { directions } from '../CustomTypes/Directions';
+
 import {CasillaTriangular, Casilla} from './Casilla';
 
  export class BoardCreator {

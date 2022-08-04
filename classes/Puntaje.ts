@@ -23,4 +23,4 @@ export class AddRule implements Calculator{
        let n = 100;
        return n; 
     }
-}
+}  
