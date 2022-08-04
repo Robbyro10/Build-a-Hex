@@ -33,25 +33,22 @@ console.log(tableroHexagonal);
 //PIEZA GENERATION(Random)
 //Will generate piezas of less than n fichas
 
-let pieza0: FichaTriangular[] = fichaCreator.crearFichasRandom(6, "Black");
-let pieza1: FichaTriangular[] = fichaCreator.crearFichasRandom(6, "Black");
-let pieza2: FichaTriangular[] = fichaCreator.crearFichasRandom(6, "Black");
+let pieza0: FichaTriangular[] = fichaCreator.crearFichasRandom(6);
+let pieza1: FichaTriangular[] = fichaCreator.crearFichasRandom(6);
+let pieza2: FichaTriangular[] = fichaCreator.crearFichasRandom(6);
 
 piezaCreator.getPieza(pieza0);
 
 piezaCreator.getPieza(pieza1);
 
 piezaCreator.getPieza(pieza2);
-//console.log(pieza0);
 
-/*
 console.log("Pieza0:");
 console.log(pieza0);
 console.log("Pieza1:");
 console.log(pieza1);
 console.log("Pieza2:");
 console.log(pieza2);
-*/
 
 ////PIEZA GENERATION(Manual)
 //Will generate piezas of n fichas
