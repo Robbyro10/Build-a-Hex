@@ -1,5 +1,4 @@
-import { Ficha, FichaTriangular } from "./Ficha";
-import { Colors } from "../CustomTypes/Colors";
+import { FichaTriangular } from "./Ficha";
 
 export class PiezaCreator {
 

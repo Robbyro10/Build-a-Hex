@@ -28,7 +28,7 @@ let regla = new AddRule;
 //Refers to the specific board of 54 fichas and in the shape of a hexagon
 let tableroHexagonal: CasillaTriangular[] = casillaCreator.crearCasillas(54);
 boardCreator.getTableroHexagonal(tableroHexagonal);
-//console.log(tableroHexagonal);
+console.log(tableroHexagonal);
 
 //PIEZA GENERATION(Random)
 //Will generate piezas of less than n fichas
@@ -60,7 +60,7 @@ let piezaManual: FichaTriangular[] = fichaCreator.crearFichasManual(4, "Green");
 let piezaManual1: FichaTriangular[] = fichaCreator.crearFichasManual(2, "Green");
 let piezaManual2: FichaTriangular[] = fichaCreator.crearFichasManual(3, "Blue");
 
-
+/*
 console.log("piezas manuales");
 piezaCreator.getPieza(piezaManual);
 console.log(piezaManual);
@@ -68,9 +68,11 @@ piezaCreator.getPieza(piezaManual1);
 console.log(piezaManual1);
 piezaCreator.getPieza(piezaManual2);
 console.log(piezaManual2);
-
+*/
 
 //PIEZA INSERTION 
+
+/*
 
 let hex0 = hexagon.getHexagonIds(tableroHexagonal[0], tableroHexagonal);
 piezaHandler.insertarPieza(piezaManual,4,hex0,tableroHexagonal);
@@ -108,6 +110,9 @@ if (hexagon.detectHexagon(hex0, tableroHexagonal)){
   puntaje.changePoints(regla);
   console.log(puntaje);
 }
+
+*/
+
 //console.log(tablero);
 
 //PIEZA ROTATION
@@ -124,6 +129,7 @@ console.log(pieza0);
 */
 
 //FICHA INSERTION
+/*
 let ficha0 = new Ficha("Pink", true); 
 let ficha1 = new Ficha("White", false);
 let ficha2 = new FichaTriangular("Black", true);
@@ -138,7 +144,7 @@ ficha2.insertar(tableroHexagonal[2]);
 //Should not get inserted
 ficha6.insertar(tableroHexagonal[2]);
 ficha7.insertar(tableroHexagonal[0]);
-
+*/
 //console.log(tableroHexagonal);
 
 //CHECK FOR GAME OVER 

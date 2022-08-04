@@ -1,5 +1,5 @@
-import { Casilla, CasillaTriangular } from "./Casilla";
-import { Ficha, FichaTriangular } from "./Ficha";
+import { CasillaTriangular } from "./Casilla";
+import { FichaTriangular } from "./Ficha";
 
 export class PiezaHandler {
 

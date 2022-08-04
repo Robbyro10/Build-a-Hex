@@ -1,5 +1,5 @@
 
-import { Casilla, CasillaTriangular } from "./Casilla";
+import { CasillaTriangular } from "./Casilla";
 
 
 export class Hexagon {

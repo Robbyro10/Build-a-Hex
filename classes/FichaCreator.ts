@@ -1,6 +1,5 @@
 import { Ficha, FichaTriangular } from "./Ficha";
 import { Colors } from "../CustomTypes/Colors";
-import { directions } from "../CustomTypes/Directions";
 
 export class FichaCreator<D> {
 
