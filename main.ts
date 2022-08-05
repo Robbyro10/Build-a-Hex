@@ -50,6 +50,8 @@ console.log(pieza1);
 console.log("Pieza2:");
 console.log(pieza2);
 
+console.log("Hello world!");
+
 ////PIEZA GENERATION(Manual)
 //Will generate piezas of n fichas
 
